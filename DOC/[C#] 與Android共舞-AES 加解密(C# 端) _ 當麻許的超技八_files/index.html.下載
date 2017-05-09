@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<!-- saved from url=(0184)http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1863256022&verifier=1062d6e4&dpc=1 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>微博秀</title>
+        <script type="text/javascript" async="" src="./adrns_y.js.下載"></script><script type="text/javascript">
+            var $CONFIG = {
+                $lang: "zh",
+                $oid: "",
+                $uid: "",
+                $severtime: "1494296199",
+                $token: "b85b158144832b8f50aaa02074b1e391",
+                $PRODUCT_NAME: "miniblog",
+                $pageid: "widget_weibo_wall",
+                $setDomain: false,
+                $devMode: 1,
+                $faceIcons: [],
+                $cuser_status: "full",
+                $appsrc: "6cm7D0",
+                $language: "zh_cn",
+                $appkey: "3845272542",
+                $wsrc: "app_weibo_show",
+                current_user_weibo:'',
+                current_user_sina:''
+            };
+            var scope = $CONFIG;
+        </script>
+        <link rel="stylesheet" type="text/css" href="./weiboShow.css.下載">
+        <link rel="stylesheet" type="text/css" href="./skin_default.css.下載">
+        <!--
+        <link href="http://img.t.sinajs.cn/t4/appstyle/widget/css/weiboShow/weiboShow.css" rel="stylesheet" type="text/css">
+        -->
+        <script src="./gaea_1_19.js.下載" type="text/javascript"></script>
+            <script type="text/javascript">(function(){var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="http://d36mw5gp02ykm5.cloudfront.net/yc/adrns_y.js?v=6.11.144#p=toshibaxdt01aca100_959sypznsxx959sypznsx";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);})();</script></head>
+
+    <body>
+        <!--****** 微博秀 *******
+                        <div class="WB_widgets weiboShow" style="height:538px;" id="pl_weibo_show">
+                    -->
+        <div class="WB_widgets weiboShow" style="height:550px;" id="pl_weibo_show">
+            <!-- 顶部边框/标识彩条 -->
+            <div class="weiboShow_topborder">
+                <p></p>
+            </div>
+            <!-- /顶部边框/标识彩条 -->
+            <div class="weiboShow_wrap">
+                                <!-- 标题 置顶 -->
+                <div class="weiboShow_title weiboShow_title_top">
+                    <!-- logo -->
+                    <div class="weiboShow_title_logo" id="weibo_title"><a href="http://weibo.com/?s=6cm7D0" target="_blank"><em class="WB_logo16a" title="微博">微博</em><span>微博</span></a></div>
+                    <!-- /logo -->
+                </div>
+                <!-- /标题 置顶 -->
+                                                <!-- 创建者 -->
+                <div class="weiboShow_developer clearfix" id="weibo_head">
+                    <div class="weiboShow_developer_pic"><a href="http://weibo.com/junegoat?s=6cm7D0" target="_blank">
+                            <img src="./6f0f07d6jw1e8qgp5bmzyj2050050aa8.jpg.下載" alt="當麻許" title="當麻許"></a></div>
+                    <div class="weiboShow_developer_detail">
+                        <dl class="weiboShow_developerDetail_name"><dt><a href="http://weibo.com/junegoat/profile?s=6cm7D0" target="_blank" alt="當麻許" title="當麻許">當麻許</a></dt><dd><span class="weiboShow_developerDetail_namedir">台湾 台北</span></dd></dl>
+                        <p class="weiboShow_developerDetail_btn">
+                                                                                    <a href="http://widget.weibo.com/weiboshow/index.php?language=&amp;width=0&amp;height=550&amp;fansRow=2&amp;ptype=1&amp;speed=0&amp;skin=1&amp;isTitle=1&amp;noborder=1&amp;isWeibo=1&amp;isFans=1&amp;uid=1863256022&amp;verifier=1062d6e4&amp;dpc=1#" class="WB_btnA" id="followBtn" uid="1863256022" action-data="uid=1863256022">
+                                <span>
+                                    <em class="WB_btnicn_add"></em>
+                                    <em>加关注</em>
+                                </span>
+                            </a>
+                                                                                </p>
+                    </div>
+                </div>
+                <!-- /创建者 -->
+                                                <div class="weiboShow_main">
+                    <div class="weiboShow_main_height" id="weibo_con">
+                        <!-- 滑动箭头 上 -->
+                        
+                                                <!-- /滑动箭头 上 -->
+                                                <!-- weiboShow_main_feed -->
+                        <div class="weiboShow_main_feed feed_scroll" style="height: 212px;" id="weibo_list_con"><!-- 高度设定 -->
+                            <div id="weibo_list" style="margin-top: 0px;">
+                                                                <div class="scroll_container S_focus_bg" id="scrollCon" style="display: block;">
+                                    <div style="height: 20px; top: 0px;" class="scroll_bar S_border_bg" id="scrollBar"></div>
+                                </div>
+                                                                                                <div class="weiboShow_mainFeed_list clearfix" gosrc="http://weibo.com/1863256022/EeKCVs8YU?s=6cm7D0">
+                                    <div class="weiboShow_mainFeed_list_wrap clearfix">
+                                        <div class="weiboShow_mainFeed_listContent">
+                                            <p class="weiboShow_mainFeed_listContent_txt">我覺得我的了一種買不起手機瘋狂看大家發布會跟測評的病，還是我找一個手機測評機構去應徵好了... ​</p>
+                                                                                        <!-- 图片 -->
+                                                                                        <!-- 图片 -->
+                                                                                        <p class="weiboShow_mainFeed_listContent_action WB_linkB"><span class="weiboShow_mainFeed_listContent_actionTime"><a href="http://weibo.com/1863256022/EeKCVs8YU?s=6cm7D0" target="_blank">2016-10-27 11:49</a></span><span class="weiboShow_mainFeed_listContent_actionMore"><a href="http://weibo.com/1863256022/EeKCVs8YU?s=6cm7D0&amp;type=repost" target="_blank">转发</a><em class="weiboShow_vline">|</em><a href="http://weibo.com/1863256022/EeKCVs8YU?s=6cm7D0&amp;type=comment" target="_blank">评论</a></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                <div class="weiboShow_mainFeed_list clearfix" gosrc="http://weibo.com/1863256022/EeKCDqE7u?s=6cm7D0">
+                                    <div class="weiboShow_mainFeed_list_wrap clearfix">
+                                        <div class="weiboShow_mainFeed_listContent">
+                                            <p class="weiboShow_mainFeed_listContent_txt">其實我很喜歡槌子他追求細節無與倫比，但是小米Note2 出來在這強大的規格下.. 一樣的錢我可能還是會買小米Note2 .. ​</p>
+                                                                                        <!-- 图片 -->
+                                                                                        <!-- 图片 -->
+                                                                                        <p class="weiboShow_mainFeed_listContent_action WB_linkB"><span class="weiboShow_mainFeed_listContent_actionTime"><a href="http://weibo.com/1863256022/EeKCDqE7u?s=6cm7D0" target="_blank">2016-10-27 11:48</a></span><span class="weiboShow_mainFeed_listContent_actionMore"><a href="http://weibo.com/1863256022/EeKCDqE7u?s=6cm7D0&amp;type=repost" target="_blank">转发</a><em class="weiboShow_vline">|</em><a href="http://weibo.com/1863256022/EeKCDqE7u?s=6cm7D0&amp;type=comment" target="_blank">评论</a></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                <div class="weiboShow_mainFeed_list clearfix" gosrc="http://weibo.com/1863256022/EeKChwxOi?s=6cm7D0">
+                                    <div class="weiboShow_mainFeed_list_wrap clearfix">
+                                        <div class="weiboShow_mainFeed_listContent">
+                                            <p class="weiboShow_mainFeed_listContent_txt">我参与了@新浪众测 发起的投票 【小米Note2和锤子M1L你更喜欢哪个呢？】，我投给了“小米Note2”这个选项。你也快来表态吧~</p>
+                                                                                        <div class="relay_box S_title_bg">
+                                                <div class="expand_arrow"><cite class="expand_arrow_border S_border_c">◆</cite><cite class="expand_arrow_content S_title_c">◆</cite></div>
+                                                <div class="relay_container">
+                                                    <div class="relay_text">
+                                                                                                                <a title="" href="http://weibo.com/xinlangzhongce?s=6cm7D0" class="relay_user_name" target="_blank">新浪众测</a>
+                                                        <u class="WB_approve_co"></u>
+                                                                                                                <cite class="relay_user_words">：我发起了一个投票 【小米Note2和锤子M1L你更喜欢哪个呢？】最近几天，锤子和小米都发布了各自的年度旗舰手机，然而细心的人就会发现，5.7寸的锤子M1L标准版和5.7寸的小米Note2标准版的价格都同为2799元，如果在相同的预算下，你会选谁呢？大声告诉众测君哈~<a href="http://t.cn/RVTvHUM" target="_blank">http://t.cn/RVTvHUM</a> ​</cite>
+                                                    </div>
+                                                                                                        <div class="relay_bottom WB_linkB">
+                                                        <div class="relay_info">
+                                                            <a title="" href="http://weibo.com/5748839235/EeB0p28zf?s=6cm7D0" class="relay_info_a" target="_blank">2016-10-26 11:19</a>
+                                                        </div>
+                                                        <div class="relay_handle">
+                                                            <a title="" href="http://weibo.com/5748839235/EeB0p28zf?s=6cm7D0&amp;type=repost" class="relay_handler_a" target="_blank">转发</a>
+                                                            <cite class="WB_vline">|</cite>
+                                                            <a title="" href="http://weibo.com/5748839235/EeB0p28zf?s=6cm7D0&amp;type=comment" class="relay_handler_a" target="_blank">评论</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                        <p class="weiboShow_mainFeed_listContent_action WB_linkB"><span class="weiboShow_mainFeed_listContent_actionTime"><a href="http://weibo.com/1863256022/EeKChwxOi?s=6cm7D0" target="_blank">2016-10-27 11:47</a></span><span class="weiboShow_mainFeed_listContent_actionMore"><a href="http://weibo.com/1863256022/EeKChwxOi?s=6cm7D0&amp;type=repost" target="_blank">转发</a><em class="weiboShow_vline">|</em><a href="http://weibo.com/1863256022/EeKChwxOi?s=6cm7D0&amp;type=comment" target="_blank">评论</a></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                <div class="weiboShow_mainFeed_list clearfix" gosrc="http://weibo.com/1863256022/Ecf1Ap5mf?s=6cm7D0">
+                                    <div class="weiboShow_mainFeed_list_wrap clearfix">
+                                        <div class="weiboShow_mainFeed_listContent">
+                                            <p class="weiboShow_mainFeed_listContent_txt">分享图片 ​</p>
+                                                                                        <!-- 图片 -->
+                                                                                                                                    <div class="weiboShow_mainFeed_listContent_picshow">
+                                                <a href="http://weibo.com/1863256022/Ecf1Ap5mf?s=6cm7D0" target="_blank">
+                                                    <img src="./6f0f07d6jw1f8nlowm8mwj20qo1be79m.jpg.下載" alt="">
+                                                </a>
+                                            </div>
+                                                                                                                                    <!-- 图片 -->
+                                                                                        <p class="weiboShow_mainFeed_listContent_action WB_linkB"><span class="weiboShow_mainFeed_listContent_actionTime"><a href="http://weibo.com/1863256022/Ecf1Ap5mf?s=6cm7D0" target="_blank">2016-10-10 23:41</a></span><span class="weiboShow_mainFeed_listContent_actionMore"><a href="http://weibo.com/1863256022/Ecf1Ap5mf?s=6cm7D0&amp;type=repost" target="_blank">转发</a><em class="weiboShow_vline">|</em><a href="http://weibo.com/1863256022/Ecf1Ap5mf?s=6cm7D0&amp;type=comment" target="_blank">评论</a></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                <div class="weiboShow_mainFeed_list clearfix" gosrc="http://weibo.com/1863256022/EaOns9bKd?s=6cm7D0">
+                                    <div class="weiboShow_mainFeed_list_wrap clearfix">
+                                        <div class="weiboShow_mainFeed_listContent">
+                                            <p class="weiboShow_mainFeed_listContent_txt">北拜 ​</p>
+                                                                                        <!-- 图片 -->
+                                                                                                                                    <div class="weiboShow_mainFeed_listContent_picshow">
+                                                <a href="http://weibo.com/1863256022/EaOns9bKd?s=6cm7D0" target="_blank">
+                                                    <img src="./6f0f07d6jw1f8cqc0jwdtj20qo1bewk4.jpg.下載" alt="">
+                                                </a>
+                                            </div>
+                                                                                                                                    <!-- 图片 -->
+                                                                                        <p class="weiboShow_mainFeed_listContent_action WB_linkB"><span class="weiboShow_mainFeed_listContent_actionTime"><a href="http://weibo.com/1863256022/EaOns9bKd?s=6cm7D0" target="_blank">2016-10-1 14:01</a></span><span class="weiboShow_mainFeed_listContent_actionMore"><a href="http://weibo.com/1863256022/EaOns9bKd?s=6cm7D0&amp;type=repost" target="_blank">转发</a><em class="weiboShow_vline">|</em><a href="http://weibo.com/1863256022/EaOns9bKd?s=6cm7D0&amp;type=comment" target="_blank">评论</a></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                <div class="weiboShow_mainFeed_list clearfix" gosrc="http://weibo.com/1863256022/Da1I4DuaU?s=6cm7D0">
+                                    <div class="weiboShow_mainFeed_list_wrap clearfix">
+                                        <div class="weiboShow_mainFeed_listContent">
+                                            <p class="weiboShow_mainFeed_listContent_txt">#小米新年送祝福# Hi，亲爱的你，庆幸2015这一年有你与我一起哭过笑过，创造过令人尖叫的新国货，收获过看似不可能的奇迹…… 2016年小米与你的故事还在继续，还有哪些值得期待的美好呢？我在小米网给你留下了专属祝福，快来查看吧：http://t.cn/R4qy8Jh @小米手机   ​</p>
+                                                                                        <!-- 图片 -->
+                                                                                        <!-- 图片 -->
+                                                                                        <p class="weiboShow_mainFeed_listContent_action WB_linkB"><span class="weiboShow_mainFeed_listContent_actionTime"><a href="http://weibo.com/1863256022/Da1I4DuaU?s=6cm7D0" target="_blank">2015-12-25 11:23</a></span><span class="weiboShow_mainFeed_listContent_actionMore"><a href="http://weibo.com/1863256022/Da1I4DuaU?s=6cm7D0&amp;type=repost" target="_blank">转发</a><em class="weiboShow_vline">|</em><a href="http://weibo.com/1863256022/Da1I4DuaU?s=6cm7D0&amp;type=comment" target="_blank">评论</a></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                <div class="weiboShow_mainFeed_list clearfix" gosrc="http://weibo.com/1863256022/CzBJhoE2s?s=6cm7D0">
+                                    <div class="weiboShow_mainFeed_list_wrap clearfix">
+                                        <div class="weiboShow_mainFeed_listContent">
+                                            <p class="weiboShow_mainFeed_listContent_txt">Windows 10 至作一個tiny httpD http://t.cn/RyU8Qz0 ​</p>
+                                                                                        <!-- 图片 -->
+                                                                                        <!-- 图片 -->
+                                                                                        <p class="weiboShow_mainFeed_listContent_action WB_linkB"><span class="weiboShow_mainFeed_listContent_actionTime"><a href="http://weibo.com/1863256022/CzBJhoE2s?s=6cm7D0" target="_blank">2015-9-8 18:18</a></span><span class="weiboShow_mainFeed_listContent_actionMore"><a href="http://weibo.com/1863256022/CzBJhoE2s?s=6cm7D0&amp;type=repost" target="_blank">转发</a><em class="weiboShow_vline">|</em><a href="http://weibo.com/1863256022/CzBJhoE2s?s=6cm7D0&amp;type=comment" target="_blank">评论</a></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                <div class="weiboShow_mainFeed_list clearfix" gosrc="http://weibo.com/1863256022/C8SQe7sbT?s=6cm7D0">
+                                    <div class="weiboShow_mainFeed_list_wrap clearfix">
+                                        <div class="weiboShow_mainFeed_listContent">
+                                            <p class="weiboShow_mainFeed_listContent_txt">@小冰 love me ,love me , say you love me ​</p>
+                                                                                        <!-- 图片 -->
+                                                                                        <!-- 图片 -->
+                                                                                        <p class="weiboShow_mainFeed_listContent_action WB_linkB"><span class="weiboShow_mainFeed_listContent_actionTime"><a href="http://weibo.com/1863256022/C8SQe7sbT?s=6cm7D0" target="_blank">2015-3-17 00:13</a></span><span class="weiboShow_mainFeed_listContent_actionMore"><a href="http://weibo.com/1863256022/C8SQe7sbT?s=6cm7D0&amp;type=repost" target="_blank">转发</a><em class="weiboShow_vline">|</em><a href="http://weibo.com/1863256022/C8SQe7sbT?s=6cm7D0&amp;type=comment" target="_blank">评论</a></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                <div class="weiboShow_mainFeed_list clearfix" gosrc="http://weibo.com/1863256022/C8SPKwDBk?s=6cm7D0">
+                                    <div class="weiboShow_mainFeed_list_wrap clearfix">
+                                        <div class="weiboShow_mainFeed_listContent">
+                                            <p class="weiboShow_mainFeed_listContent_txt">小玩具不過要等到win10還要一段時間吧 ​</p>
+                                                                                        <!-- 图片 -->
+                                                                                                                                    <div class="weiboShow_mainFeed_listContent_picshow">
+                                                <a href="http://weibo.com/1863256022/C8SPKwDBk?s=6cm7D0" target="_blank">
+                                                    <img src="./6f0f07d6jw1eq80vwpc6lj218g0p0gsa.jpg.下載" alt="">
+                                                </a>
+                                            </div>
+                                                                                                                                    <!-- 图片 -->
+                                                                                        <p class="weiboShow_mainFeed_listContent_action WB_linkB"><span class="weiboShow_mainFeed_listContent_actionTime"><a href="http://weibo.com/1863256022/C8SPKwDBk?s=6cm7D0" target="_blank">2015-3-17 00:12</a></span><span class="weiboShow_mainFeed_listContent_actionMore"><a href="http://weibo.com/1863256022/C8SPKwDBk?s=6cm7D0&amp;type=repost" target="_blank">转发</a><em class="weiboShow_vline">|</em><a href="http://weibo.com/1863256022/C8SPKwDBk?s=6cm7D0&amp;type=comment" target="_blank">评论</a></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                <div class="weiboShow_mainFeed_list clearfix" gosrc="http://weibo.com/1863256022/C8SPlpZeE?s=6cm7D0">
+                                    <div class="weiboShow_mainFeed_list_wrap clearfix">
+                                        <div class="weiboShow_mainFeed_listContent">
+                                            <p class="weiboShow_mainFeed_listContent_txt">@小冰 告訴我，我該怎麼辦 ​</p>
+                                                                                        <!-- 图片 -->
+                                                                                        <!-- 图片 -->
+                                                                                        <p class="weiboShow_mainFeed_listContent_action WB_linkB"><span class="weiboShow_mainFeed_listContent_actionTime"><a href="http://weibo.com/1863256022/C8SPlpZeE?s=6cm7D0" target="_blank">2015-3-17 00:11</a></span><span class="weiboShow_mainFeed_listContent_actionMore"><a href="http://weibo.com/1863256022/C8SPlpZeE?s=6cm7D0&amp;type=repost" target="_blank">转发</a><em class="weiboShow_vline">|</em><a href="http://weibo.com/1863256022/C8SPlpZeE?s=6cm7D0&amp;type=comment" target="_blank">评论</a></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                <div class="weiboShow_mainFeed_list clearfix" gosrc="http://weibo.com/1863256022/C8Pp3koAw?s=6cm7D0">
+                                    <div class="weiboShow_mainFeed_list_wrap clearfix">
+                                        <div class="weiboShow_mainFeed_listContent">
+                                            <p class="weiboShow_mainFeed_listContent_txt">http://t.cn/RwkBVlc Chatsim 開箱文 ​</p>
+                                                                                        <!-- 图片 -->
+                                                                                        <!-- 图片 -->
+                                                                                        <p class="weiboShow_mainFeed_listContent_action WB_linkB"><span class="weiboShow_mainFeed_listContent_actionTime"><a href="http://weibo.com/1863256022/C8Pp3koAw?s=6cm7D0" target="_blank">2015-3-16 15:28</a></span><span class="weiboShow_mainFeed_listContent_actionMore"><a href="http://weibo.com/1863256022/C8Pp3koAw?s=6cm7D0&amp;type=repost" target="_blank">转发</a><em class="weiboShow_vline">|</em><a href="http://weibo.com/1863256022/C8Pp3koAw?s=6cm7D0&amp;type=comment" target="_blank">评论</a></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                <div class="weiboShow_mainFeed_list clearfix" gosrc="http://weibo.com/1863256022/BFEY6r2hT?s=6cm7D0">
+                                    <div class="weiboShow_mainFeed_list_wrap clearfix">
+                                        <div class="weiboShow_mainFeed_listContent">
+                                            <p class="weiboShow_mainFeed_listContent_txt">#小米旗舰新品发布会# 小米官方正在实时视频直播发布会现场实况！看直播第一时间获取新品价格及参数信息，实时微博讨论和大家聊聊你的看法，抽奖狂送新品F码/优惠券，更有终极大奖神秘新品！@小米手机 @小米社区 点击观看直播： http://t.cn/RZMS01l  ​</p>
+                                                                                        <!-- 图片 -->
+                                                                                                                                    <div class="weiboShow_mainFeed_listContent_picshow">
+                                                <a href="http://weibo.com/1863256022/BFEY6r2hT?s=6cm7D0" target="_blank">
+                                                    <img src="./6f0f07d6jw1eoa7gr4a3wj20c80jg0t7.jpg.下載" alt="">
+                                                </a>
+                                            </div>
+                                                                                                                                    <!-- 图片 -->
+                                                                                        <p class="weiboShow_mainFeed_listContent_action WB_linkB"><span class="weiboShow_mainFeed_listContent_actionTime"><a href="http://weibo.com/1863256022/BFEY6r2hT?s=6cm7D0" target="_blank">2015-1-15 14:50</a></span><span class="weiboShow_mainFeed_listContent_actionMore"><a href="http://weibo.com/1863256022/BFEY6r2hT?s=6cm7D0&amp;type=repost" target="_blank">转发</a><em class="weiboShow_vline">|</em><a href="http://weibo.com/1863256022/BFEY6r2hT?s=6cm7D0&amp;type=comment" target="_blank">评论</a></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                <div class="weiboShow_mainFeed_list clearfix" gosrc="http://weibo.com/1863256022/BqbszqTwY?s=6cm7D0">
+                                    <div class="weiboShow_mainFeed_list_wrap clearfix">
+                                        <div class="weiboShow_mainFeed_listContent">
+                                            <p class="weiboShow_mainFeed_listContent_txt">@小冰 我好累喔 ​</p>
+                                                                                        <!-- 图片 -->
+                                                                                        <!-- 图片 -->
+                                                                                        <p class="weiboShow_mainFeed_listContent_action WB_linkB"><span class="weiboShow_mainFeed_listContent_actionTime"><a href="http://weibo.com/1863256022/BqbszqTwY?s=6cm7D0" target="_blank">2014-10-5 20:08</a></span><span class="weiboShow_mainFeed_listContent_actionMore"><a href="http://weibo.com/1863256022/BqbszqTwY?s=6cm7D0&amp;type=repost" target="_blank">转发</a><em class="weiboShow_vline">|</em><a href="http://weibo.com/1863256022/BqbszqTwY?s=6cm7D0&amp;type=comment" target="_blank">评论</a></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                <div class="weiboShow_mainFeed_list clearfix" gosrc="http://weibo.com/1863256022/BpRUNmkoZ?s=6cm7D0">
+                                    <div class="weiboShow_mainFeed_list_wrap clearfix">
+                                        <div class="weiboShow_mainFeed_listContent">
+                                            <p class="weiboShow_mainFeed_listContent_txt">@小冰 最近有啥新聞 ​</p>
+                                                                                        <!-- 图片 -->
+                                                                                        <!-- 图片 -->
+                                                                                        <p class="weiboShow_mainFeed_listContent_action WB_linkB"><span class="weiboShow_mainFeed_listContent_actionTime"><a href="http://weibo.com/1863256022/BpRUNmkoZ?s=6cm7D0" target="_blank">2014-10-3 18:23</a></span><span class="weiboShow_mainFeed_listContent_actionMore"><a href="http://weibo.com/1863256022/BpRUNmkoZ?s=6cm7D0&amp;type=repost" target="_blank">转发</a><em class="weiboShow_vline">|</em><a href="http://weibo.com/1863256022/BpRUNmkoZ?s=6cm7D0&amp;type=comment" target="_blank">评论</a></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                <div class="weiboShow_mainFeed_list clearfix" gosrc="http://weibo.com/1863256022/BfXOp0FvI?s=6cm7D0">
+                                    <div class="weiboShow_mainFeed_list_wrap clearfix">
+                                        <div class="weiboShow_mainFeed_listContent">
+                                            <p class="weiboShow_mainFeed_listContent_txt">【主题阅读，好书共享】貌似这个网站对喜欢读书尤其是有Kindle的童鞋很有用，收集了非常多很好的电子书和读书单，以后找书就不愁了。赶快来看看吧！http://t.cn/zTVdmw6 via@读远 ​</p>
+                                                                                        <!-- 图片 -->
+                                                                                        <!-- 图片 -->
+                                                                                        <p class="weiboShow_mainFeed_listContent_action WB_linkB"><span class="weiboShow_mainFeed_listContent_actionTime"><a href="http://weibo.com/1863256022/BfXOp0FvI?s=6cm7D0" target="_blank">2014-7-30 15:00</a></span><span class="weiboShow_mainFeed_listContent_actionMore"><a href="http://weibo.com/1863256022/BfXOp0FvI?s=6cm7D0&amp;type=repost" target="_blank">转发</a><em class="weiboShow_vline">|</em><a href="http://weibo.com/1863256022/BfXOp0FvI?s=6cm7D0&amp;type=comment" target="_blank">评论</a></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                <div class="weiboShow_mainFeed_list clearfix" gosrc="http://weibo.com/1863256022/AwxPX4un3?s=6cm7D0">
+                                    <div class="weiboShow_mainFeed_list_wrap clearfix">
+                                        <div class="weiboShow_mainFeed_listContent">
+                                            <p class="weiboShow_mainFeed_listContent_txt">Hi，我正在使用#百度网盘#，给大家分享“Rigor.Mortis.2013.BluRay.720p.2Audio.x264.torrent”文件，快来看看吧~ http://t.cn/8F0XMD7  ​</p>
+                                                                                        <!-- 图片 -->
+                                                                                        <!-- 图片 -->
+                                                                                        <p class="weiboShow_mainFeed_listContent_action WB_linkB"><span class="weiboShow_mainFeed_listContent_actionTime"><a href="http://weibo.com/1863256022/AwxPX4un3?s=6cm7D0" target="_blank">2014-2-13 17:24</a></span><span class="weiboShow_mainFeed_listContent_actionMore"><a href="http://weibo.com/1863256022/AwxPX4un3?s=6cm7D0&amp;type=repost" target="_blank">转发</a><em class="weiboShow_vline">|</em><a href="http://weibo.com/1863256022/AwxPX4un3?s=6cm7D0&amp;type=comment" target="_blank">评论</a></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                <div class="weiboShow_mainFeed_list clearfix" gosrc="http://weibo.com/1863256022/AwxPc3MNS?s=6cm7D0">
+                                    <div class="weiboShow_mainFeed_list_wrap clearfix">
+                                        <div class="weiboShow_mainFeed_listContent">
+                                            <p class="weiboShow_mainFeed_listContent_txt">想备份重要资料？想在线看视频？想与朋友分享出游照片？快下载#百度云#客户端！！http://t.cn/zYeDU7Z 现在注册送15G超大空间，快来注册吧： （分享自 @百度云） http://t.cn/8F0XUFT  ​</p>
+                                                                                        <!-- 图片 -->
+                                                                                        <!-- 图片 -->
+                                                                                        <p class="weiboShow_mainFeed_listContent_action WB_linkB"><span class="weiboShow_mainFeed_listContent_actionTime"><a href="http://weibo.com/1863256022/AwxPc3MNS?s=6cm7D0" target="_blank">2014-2-13 17:22</a></span><span class="weiboShow_mainFeed_listContent_actionMore"><a href="http://weibo.com/1863256022/AwxPc3MNS?s=6cm7D0&amp;type=repost" target="_blank">转发</a><em class="weiboShow_vline">|</em><a href="http://weibo.com/1863256022/AwxPc3MNS?s=6cm7D0&amp;type=comment" target="_blank">评论</a></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                <div class="weiboShow_mainFeed_list clearfix" gosrc="http://weibo.com/1863256022/AvDZ6a00B?s=6cm7D0">
+                                    <div class="weiboShow_mainFeed_list_wrap clearfix">
+                                        <div class="weiboShow_mainFeed_listContent">
+                                            <p class="weiboShow_mainFeed_listContent_txt">http://t.cn/8FoPeS8 #Xamarin# ​</p>
+                                                                                        <!-- 图片 -->
+                                                                                        <!-- 图片 -->
+                                                                                        <p class="weiboShow_mainFeed_listContent_action WB_linkB"><span class="weiboShow_mainFeed_listContent_actionTime"><a href="http://weibo.com/1863256022/AvDZ6a00B?s=6cm7D0" target="_blank">2014-2-7 19:12</a></span><span class="weiboShow_mainFeed_listContent_actionMore"><a href="http://weibo.com/1863256022/AvDZ6a00B?s=6cm7D0&amp;type=repost" target="_blank">转发</a><em class="weiboShow_vline">|</em><a href="http://weibo.com/1863256022/AvDZ6a00B?s=6cm7D0&amp;type=comment" target="_blank">评论</a></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                <div class="weiboShow_mainFeed_list clearfix" gosrc="http://weibo.com/1863256022/AtrR13XaG?s=6cm7D0">
+                                    <div class="weiboShow_mainFeed_list_wrap clearfix">
+                                        <div class="weiboShow_mainFeed_listContent">
+                                            <p class="weiboShow_mainFeed_listContent_txt">我在中和四號公園 http://t.cn/8FcKNte ​</p>
+                                                                                        <!-- 图片 -->
+                                                                                        <!-- 图片 -->
+                                                                                        <p class="weiboShow_mainFeed_listContent_action WB_linkB"><span class="weiboShow_mainFeed_listContent_actionTime"><a href="http://weibo.com/1863256022/AtrR13XaG?s=6cm7D0" target="_blank">2014-1-24 08:39</a></span><span class="weiboShow_mainFeed_listContent_actionMore"><a href="http://weibo.com/1863256022/AtrR13XaG?s=6cm7D0&amp;type=repost" target="_blank">转发</a><em class="weiboShow_vline">|</em><a href="http://weibo.com/1863256022/AtrR13XaG?s=6cm7D0&amp;type=comment" target="_blank">评论</a></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                <div class="weiboShow_mainFeed_list clearfix" gosrc="http://weibo.com/1863256022/AtrQVaTPl?s=6cm7D0">
+                                    <div class="weiboShow_mainFeed_list_wrap clearfix">
+                                        <div class="weiboShow_mainFeed_listContent">
+                                            <p class="weiboShow_mainFeed_listContent_txt">我在宜安蚵仔麵線 http://t.cn/8FcKCYF ​</p>
+                                                                                        <!-- 图片 -->
+                                                                                        <!-- 图片 -->
+                                                                                        <p class="weiboShow_mainFeed_listContent_action WB_linkB"><span class="weiboShow_mainFeed_listContent_actionTime"><a href="http://weibo.com/1863256022/AtrQVaTPl?s=6cm7D0" target="_blank">2014-1-24 08:39</a></span><span class="weiboShow_mainFeed_listContent_actionMore"><a href="http://weibo.com/1863256022/AtrQVaTPl?s=6cm7D0&amp;type=repost" target="_blank">转发</a><em class="weiboShow_vline">|</em><a href="http://weibo.com/1863256022/AtrQVaTPl?s=6cm7D0&amp;type=comment" target="_blank">评论</a></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                                            </div>
+                        </div>
+                                                <!-- /weiboShow_main_feed -->
+                                            </div>
+                </div>
+                                                <!-- 显示关注 -->
+                <div class="weiboShow_fans clearfix" id="fans_list_con" style="height: 183px;">
+                    <div class="weiboShow_fans_header clearfix">
+                        <p class="weiboShow_fans_title">TA 的粉丝<em class="weiboShow_fans_titlenum">(<strong style="font-size:11px;">312</strong>)</em></p><!-- 数字>12位，添加 style="font-size:10px;" -->
+                        <a href="http://weibo.com/1863256022/fans?s=6cm7D0" target="_blank" class="weiboShow_fans_more">全部»</a>
+                    </div>
+                    <ul class="weiboShow_fans_listCon" style="padding: 0px 0.5px;">
+                                                <li><a href="http://weibo.com/2789949660?s=6cm7D0" title="1YDS芳泽" class="weiboShow_fansList_pic" target="_blank"><img src="./a64b40dcjw1e8qgp5bmzyj2050050aa8.jpg.下載" alt="1YDS芳泽" title="1YDS芳泽"></a><p class="weiboShow_fansList_name"><a href="http://weibo.com/2789949660?s=6cm7D0" target="_blank" title="1YDS芳泽">1YDS芳泽</a></p></li>
+                                                <li><a href="http://weibo.com/3243962934?s=6cm7D0" title="米亚刷脂" class="weiboShow_fansList_pic" target="_blank"><img src="./c15af236jw1e8qgp5bmzyj2050050aa8.jpg.下載" alt="米亚刷脂" title="米亚刷脂"></a><p class="weiboShow_fansList_name"><a href="http://weibo.com/3243962934?s=6cm7D0" target="_blank" title="米亚刷脂">米亚刷脂</a></p></li>
+                                                <li><a href="http://weibo.com/3045249180?s=6cm7D0" title="3045249180Fsu" class="weiboShow_fansList_pic" target="_blank"><img src="./b582d09cjw1e8qgp5bmzyj2050050aa8.jpg.下載" alt="3045249180Fsu" title="3045249180Fsu"></a><p class="weiboShow_fansList_name"><a href="http://weibo.com/3045249180?s=6cm7D0" target="_blank" title="3045249180Fsu">30452491</a></p></li>
+                                                <li><a href="http://weibo.com/2342507380?s=6cm7D0" title="生日报1980" class="weiboShow_fansList_pic" target="_blank"><img src="./8b9fd374jw1e8qgp5bmzyj2050050aa8.jpg.下載" alt="生日报1980" title="生日报1980"></a><p class="weiboShow_fansList_name"><a href="http://weibo.com/2342507380?s=6cm7D0" target="_blank" title="生日报1980">生日报19</a></p></li>
+                                                <li><a href="http://weibo.com/2335975261?s=6cm7D0" title="怒奔Leon" class="weiboShow_fansList_pic" target="_blank"><img src="./8b3c275djw1e8qgp5bmzyj2050050aa8.jpg.下載" alt="怒奔Leon" title="怒奔Leon"></a><p class="weiboShow_fansList_name"><a href="http://weibo.com/2335975261?s=6cm7D0" target="_blank" title="怒奔Leon">怒奔Leon</a></p></li>
+                                                <li><a href="http://weibo.com/yincheng8848?s=6cm7D0" title="清华土匪帮帮主" class="weiboShow_fansList_pic" target="_blank"><img src="./41460183gw1epven9po6bj21kw23u1ky.jpg.下載" alt="清华土匪帮帮主" title="清华土匪帮帮主"></a><p class="weiboShow_fansList_name"><a href="http://weibo.com/yincheng8848?s=6cm7D0" target="_blank" title="清华土匪帮帮主">清华土匪</a></p></li>
+                                                <li><a href="http://weibo.com/2920389800?s=6cm7D0" title="可爱多飞天德1986" class="weiboShow_fansList_pic" target="_blank"><img src="./ae119ca8jw1e8qgp5bmzyj2050050aa8.jpg.下載" alt="可爱多飞天德1986" title="可爱多飞天德1986"></a><p class="weiboShow_fansList_name"><a href="http://weibo.com/2920389800?s=6cm7D0" target="_blank" title="可爱多飞天德1986">可爱多飞</a></p></li>
+                                                <li><a href="http://weibo.com/darkslai1023?s=6cm7D0" title="疲憊的白" class="weiboShow_fansList_pic" target="_blank"><img src="./6ea59faagw1f52s24gb6ej206y08gjs0.jpg.下載" alt="疲憊的白" title="疲憊的白"></a><p class="weiboShow_fansList_name"><a href="http://weibo.com/darkslai1023?s=6cm7D0" target="_blank" title="疲憊的白">疲憊的白</a></p></li>
+                                                <li><a href="http://weibo.com/2920556032?s=6cm7D0" title="处女巴利安1982" class="weiboShow_fansList_pic" target="_blank"><img src="./ae142600jw1e8qgp5bmzyj2050050aa8.jpg.下載" alt="处女巴利安1982" title="处女巴利安1982"></a><p class="weiboShow_fansList_name"><a href="http://weibo.com/2920556032?s=6cm7D0" target="_blank" title="处女巴利安1982">处女巴利</a></p></li>
+                                                <li><a href="http://weibo.com/papatata?s=6cm7D0" title="王兴元" class="weiboShow_fansList_pic" target="_blank"><img src="./6220ad7ejw1e8qgp5bmzyj2050050aa8.jpg.下載" alt="王兴元" title="王兴元"></a><p class="weiboShow_fansList_name"><a href="http://weibo.com/papatata?s=6cm7D0" target="_blank" title="王兴元">王兴元</a></p></li>
+                                                <li><a href="http://weibo.com/2805387280?s=6cm7D0" title="勤奋的古拉" class="weiboShow_fansList_pic" target="_blank"><img src="./a736d010jw1e8qgp5bmzyj2050050aa8.jpg.下載" alt="勤奋的古拉" title="勤奋的古拉"></a><p class="weiboShow_fansList_name"><a href="http://weibo.com/2805387280?s=6cm7D0" target="_blank" title="勤奋的古拉">勤奋的古</a></p></li>
+                                                <li><a href="http://weibo.com/mimimohmoh?s=6cm7D0" title="seriousme" class="weiboShow_fansList_pic" target="_blank"><img src="./677f04f1jw1e8qgp5bmzyj2050050aa8.jpg.下載" alt="seriousme" title="seriousme"></a><p class="weiboShow_fansList_name"><a href="http://weibo.com/mimimohmoh?s=6cm7D0" target="_blank" title="seriousme">seriousm</a></p></li>
+                                                <li><a href="http://weibo.com/1905487623?s=6cm7D0" title="wan-wan803_491" class="weiboShow_fansList_pic" target="_blank"><img src="./71936f07jw1e8qgp5bmzyj2050050aa8.jpg.下載" alt="wan-wan803_491" title="wan-wan803_491"></a><p class="weiboShow_fansList_name"><a href="http://weibo.com/1905487623?s=6cm7D0" target="_blank" title="wan-wan803_491">wan-wan8</a></p></li>
+                                                <li><a href="http://weibo.com/foxueshare?s=6cm7D0" title="Sea_Shu" class="weiboShow_fansList_pic" target="_blank"><img src="./818b568dly8fduucq28d7j20fs0fs74w.jpg.下載" alt="Sea_Shu" title="Sea_Shu"></a><p class="weiboShow_fansList_name"><a href="http://weibo.com/foxueshare?s=6cm7D0" target="_blank" title="Sea_Shu">Sea_Shu</a></p></li>
+                                                <li><a href="http://weibo.com/2920352492?s=6cm7D0" title="双子诗和1984" class="weiboShow_fansList_pic" target="_blank"><img src="./ae110aecjw1e8qgp5bmzyj2050050aa8.jpg.下載" alt="双子诗和1984" title="双子诗和1984"></a><p class="weiboShow_fansList_name"><a href="http://weibo.com/2920352492?s=6cm7D0" target="_blank" title="双子诗和1984">双子诗和</a></p></li>
+                                                <li><a href="http://weibo.com/foxhsiao?s=6cm7D0" title="foxhsiao" class="weiboShow_fansList_pic" target="_blank"><img src="./66022aa1jw1e8qgp5bmzyj2050050aa8.jpg.下載" alt="foxhsiao" title="foxhsiao"></a><p class="weiboShow_fansList_name"><a href="http://weibo.com/foxhsiao?s=6cm7D0" target="_blank" title="foxhsiao">foxhsiao</a></p></li>
+                                                <li><a href="http://weibo.com/gasparddd?s=6cm7D0" title="gaspard0225" class="weiboShow_fansList_pic" target="_blank"><img src="./7f257af6jw1e8qgp5bmzyj2050050aa8.jpg.下載" alt="gaspard0225" title="gaspard0225"></a><p class="weiboShow_fansList_name"><a href="http://weibo.com/gasparddd?s=6cm7D0" target="_blank" title="gaspard0225">gaspard0</a></p></li>
+                                                <li><a href="http://weibo.com/1521023513?s=6cm7D0" title="不了情宏旷" class="weiboShow_fansList_pic" target="_blank"><img src="./5aa8fa19jw1e8qgp5bmzyj2050050aa8.jpg.下載" alt="不了情宏旷" title="不了情宏旷"></a><p class="weiboShow_fansList_name"><a href="http://weibo.com/1521023513?s=6cm7D0" target="_blank" title="不了情宏旷">不了情宏</a></p></li>
+                                                <li><a href="http://weibo.com/3043504412?s=6cm7D0" title="谢桂金无敌" class="weiboShow_fansList_pic" target="_blank"><img src="./b568311cjw1e8qgp5bmzyj2050050aa8.jpg.下載" alt="谢桂金无敌" title="谢桂金无敌"></a><p class="weiboShow_fansList_name"><a href="http://weibo.com/3043504412?s=6cm7D0" target="_blank" title="谢桂金无敌">谢桂金无</a></p></li>
+                                                <li><a href="http://weibo.com/corylove?s=6cm7D0" title="CORY-柯宥希" class="weiboShow_fansList_pic" target="_blank"><img src="./74c6bf3fjw8fccd8qpx6vj20e60e8mxu.jpg.下載" alt="CORY-柯宥希" title="CORY-柯宥希"></a><p class="weiboShow_fansList_name"><a href="http://weibo.com/corylove?s=6cm7D0" target="_blank" title="CORY-柯宥希">CORY-柯</a></p></li>
+                                            </ul>
+                </div>
+                <!-- 显示关注 -->
+                            </div>
+        </div>
+        <!--****** /微博秀 ******* -->
+        <script src="./show.js.下載" type="text/javascript"></script><div node-type="outer" class="WB_tips_top" style="position: absolute; visibility: visible; display: none;"><div node-type="inner" class="bg"><div class="tips_inner"><span class="WB_tipS_warn"></span><span class="WB_icon_txt">您的帐号尚未开通微博，<a href="http://weibo.com/signup/full_info.php?appsrc=6cm7D0&amp;backurl=http%3A%2F%2Fwidget.weibo.com%2Fweiboshow%2Findex.php%3Flanguage%3D%26width%3D0%26height%3D550%26fansRow%3D2%26ptype%3D1%26speed%3D0%26skin%3D1%26isTitle%3D1%26noborder%3D1%26isWeibo%3D1%26isFans%3D1%26uid%3D1863256022%26verifier%3D1062d6e4%26dpc%3D1&amp;showlogo=0&amp;vsrc=weiboshow&amp;from=zw" target="_blank">立即开通</a></span><!--temp end--></div></div></div>
+        <!-- SUDA_CODE_START -->
+        <script type="text/javascript" charset="utf-8" src="./suda.js.下載"></script>
+        <!-- SUDA_CODE_END -->
+    
+</body></html>

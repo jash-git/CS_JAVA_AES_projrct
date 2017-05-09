@@ -1,0 +1,2523 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://no2don.blogspot.com/2013/03/c-android-aes-c.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr" xmlns:fb="http://ogp.me/ns/fb#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="blogger" name="generator">
+<link href="http://no2don.blogspot.com/favicon.ico" rel="icon" type="image/x-icon">
+<link href="http://no2don.blogspot.com/2013/03/c-android-aes-c.html" rel="canonical">
+<link rel="alternate" type="application/atom+xml" title="當麻許的超技八 - Atom" href="http://no2don.blogspot.com/feeds/posts/default">
+<link rel="alternate" type="application/rss+xml" title="當麻許的超技八 - RSS" href="http://no2don.blogspot.com/feeds/posts/default?alt=rss">
+<link rel="service.post" type="application/atom+xml" title="當麻許的超技八 - Atom" href="https://www.blogger.com/feeds/5342085419588473573/posts/default">
+
+<link rel="alternate" type="application/atom+xml" title="當麻許的超技八 - Atom" href="http://no2don.blogspot.com/feeds/5488266387114573203/comments/default">
+<!--Can't find substitution for tag [blog.ieCssRetrofitLinks]-->
+<link href="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/2013-03-13_191228.jpg.下載" rel="image_src">
+<meta content="http://no2don.blogspot.com/2013/03/c-android-aes-c.html" property="og:url">
+<meta content="[C#] 與Android共舞-AES 加解密(C# 端)" property="og:title">
+<meta content="因為最近在弄Android 對於安全行問題會需要用到加密的方法..  看了一下AES 看一下 Wiki  上面說的   進階加密標準（Advanced Encryption Standard，AES），在密碼學中又稱Rijndael加密法，是美國聯邦政府採用的一種區塊加密標準。這..." property="og:description">
+<meta content="http://2.bp.blogspot.com/-fYDTjwC_4OI/UUBgSSwEPCI/AAAAAAAAEfY/ICCU2x2MoAg/w1200-h630-p-k-no-nu/2013-03-13_191228.jpg" property="og:image">
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<meta content="當麻許的超技八" name="description">
+<meta content="當麻許,超自然,技術,八卦,C#,Facebook,Silverlight,nosql,iOS,Android,WindowPhone,MSIL,Mobile,Marketing,coding,Magic" name="keywords">
+<meta content="IE=EmulateIE10" http-equiv="X-UA-Compatible">
+<meta content="當麻許的超技八: [C#] 與Android共舞-AES 加解密(C# 端)" property="og:title">
+<meta content="blog" property="og:type">
+<meta content="http://no2don.blogspot.com/2013/03/c-android-aes-c.html" property="og:url">
+<meta content="當麻許的超技八" property="og:site_name">
+<meta content="100001962382625" property="fb:admins">
+<meta content="356241317793071" property="fb:app_id">
+<link href="https://plus.google.com/102486451503162568267/" rel="author">
+<title>[C#] 與Android共舞-AES 加解密(C# 端) | 當麻許的超技八</title>
+<link type="text/css" rel="stylesheet" href="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/124887373-widget_css_bundle.css.下載">
+<style id="page-skin-1" type="text/css"><!--
+/*
+/*
+Theme Name: Ice Chocolate
+Theme URI: http://www.owastudio.com
+Description: Ice Chocolate theme by One Winged Angel.
+Version: 1.0
+Author: One Winged Angel
+Wordpress URI: http://www.owastudio.com/
+Blogger URI: http://www.gosublogger.com/
+*/
+body{
+background: #3c3533;
+margin: 0;
+padding: 0;
+color: #fff;
+font-family: 微軟正黑體,Verdana, Tahoma, Georgia;
+font-size: 13px;
+line-height: 20px;
+}
+#container{
+overflow:hidden;
+margin:0 auto 0 auto;
+}
+.clear{
+clear:both;
+}
+a:link, a:visited, a:active{
+color:#fff;
+text-decoration: underline;
+}
+a:hover{
+color:#FEFFAF;
+text-decoration:underline;
+}
+h1,h2,h3,h4,h5,h6{
+font-weight:normal;
+font-family:微軟正黑體,Georgia;
+color:#736257;
+}
+blockquote{
+padding:10px 20px 10px 20px;
+margin:0;
+font-family:微軟正黑體,Georgia;
+font-size:16px;
+color:#997a59;
+font-style: italic;
+}
+ul{
+padding:5px 0 0 0;
+margin:0;
+}
+/*#header li,*/
+.entry li, .sidebar li{
+background:url(http://3.bp.blogspot.com/_0CLPmP1ydOo/SYVKL8v0vGI/AAAAAAAAApA/OjpS2vJAXYA/s1600/icsmall.png) no-repeat 0px 5px;
+list-style-type:none;
+padding:0 0 5px 15px;
+}
+#header{
+background: url(http://lh6.ggpht.com/_AHg9VeMsBzE/S4S_gLj1R6I/AAAAAAAAAaA/Roz8zhulN1w/s912/topnav.png)  ;
+padding: 10px 10px 10px 10px;
+margin: 0;
+border-bottom:3px solid #fff;
+}
+.headerleft{
+width:60%;
+position:relative;
+}
+.headerright{
+float:right;
+width:500px;
+text-align:right;
+}
+.headerright li{
+display:inline;
+margin:10px;
+}
+#header h1,h3{
+color:#fff;
+}
+#content{
+background: #3c3533 url(http://1.bp.blogspot.com/_0CLPmP1ydOo/SYVKLraL5MI/AAAAAAAAAoo/oy1gjHXE894/s1600/icbg.jpg) repeat-x bottom;
+padding: 10px 10px 20px 10px;
+margin: 10px 0 0px 0;
+color: #fff;
+border-bottom:3px solid #fff;
+}
+.right{
+float:right;
+width: 40%;
+}
+.right h2{
+padding:5px 0 5px 0;
+margin:0;
+border-bottom:1px solid #362f2d;
+text-transform:uppercase;
+font-size:14px;
+font-family:微軟正黑體,Georgia;
+}
+.right a{
+color:#fff;
+text-decoration:underline;
+}
+.right a:hover{
+color:#D4E6F8;
+text-decoration:underline;
+}
+.sidebar{
+background:#292321;
+padding: 0 10px 5px 10px;
+border-top:5px solid #201a19;
+margin: 0px 0 15px 0;
+}
+.sidebar ul{
+width:100%;
+display:block;
+}
+.sidebar ul li{
+float:left;
+display:block;
+width:100%;
+width:95%;
+}
+.search{
+background:#292321;
+padding: 0 10px 5px 10px;
+border-top:5px solid #201a19;
+margin: 0px 0 15px 0;
+}
+.search ul{
+list-style-type:none;
+}
+#search input#s{
+width:200px;
+background:#151515;
+color:#997a59;
+border:1px solid #393230;
+font-family:微軟正黑體,Verdana;
+padding:3px;
+font-size:11px;
+}
+#search input#searchsubmit{
+width:60px;
+background:#111;
+color:#997a59;
+border:0px solid #393230;
+font-family:微軟正黑體,Verdana;
+padding:3px;
+font-size:11px;
+text-transform:uppercase;
+font-weight:bold;
+}
+code, .code {
+display: block; /* fixes a strange ie margin bug */
+font-family: 微軟正黑體,Courier New;
+color:#1E1E1E;
+font-size: 8pt;
+overflow:auto;
+background: #f0f0f0 url(http://klcintw.images.googlepages.com/Code_BG.gif) left top repeat-y;
+border: 1px solid #ccc;
+padding: 10px 10px 10px 21px;
+max-height:200px;
+line-height: 1.2em;
+}
+.clearfix:after {
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+padding-top:5px;
+}
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+/* End hide from IE-mac */
+.left{
+position:relative;
+width:55%;
+background:#292321;
+padding: 5px 10px 5px 10px;
+border-top:5px solid #201a19;
+}
+.left h2 a{
+color:#FEFFAF;
+font-size:22px;
+}
+.post{
+padding:0 0 20px 0;
+}
+.post a{
+color:#fff;
+text-decoration:underline;
+}
+.post a:hover{
+color:#CDE5FF;
+text-decoration:underline;
+}
+.date{
+color:#997a59;
+font-size:12px;
+background:url(http://3.bp.blogspot.com/_0CLPmP1ydOo/SYVKL9BwJsI/AAAAAAAAAo4/zMd8_kCUufU/s1600/icdate.png) no-repeat 0px 3px;
+padding: 0 0 0 20px;
+}
+p.postmetadata{
+background:#111 url() no-repeat 10px 8px;
+padding:8px 8px 8px 30px;
+border-bottom:3px solid #000;
+color:#8c8c8c;
+font-size:12px;
+}
+p.postmetadata a{
+color:#ffffff;
+}
+p.postmetadata a:hover{
+color:#fff;
+}
+.navigation a{
+color:#fff;
+text-decoration:underline;
+}
+.navigation{
+padding:10px 0 10px 0;
+}
+.navigation a:hover{
+color:#4f4847;
+text-decoration:underline;
+}
+#bottom{
+background:#0076a3 url(http://lh6.ggpht.com/_AHg9VeMsBzE/S4T9gfK4bjI/AAAAAAAAAas/-jF_X8h7AzI/s912/topnav6.png) repeat-x bottom;
+padding:20px 10px 10px 10px;
+margin:0;
+color:#fff;
+}
+#bottom h2{
+padding:5px 0 5px 0;
+margin:0;
+border-bottom:1px dotted #4ea8cc;
+text-transform:uppercase;
+font-size:14px;
+font-family:微軟正黑體,Georgia;
+color:#73caeb;
+}
+.leftbox{
+background:#005b7f;
+padding:0 10px 5px 10px;
+margin:0;
+float:left;
+width:55%;
+}
+.leftbox ul{
+padding:5px 0 5px 0;
+margin:0;
+}
+.leftbox ul li{
+list-style:none;
+border-top:0px dotted #4ea8cc;
+padding:10px 0 0 20px;
+background:url() no-repeat 0px 15px;
+}
+.rightbox{
+float:right;
+width:40%;
+}
+.rightboxx{
+background:#005b7f;
+padding:0 10px 5px 10px;
+margin:0;
+}
+.authorblurb{
+background:#fff;
+margin: 30px 10px 20px 10px;
+padding:0px 5px 0 5px;
+border-top:1px dotted #004d6b;
+border-bottom:1px dotted #004d6b;
+}
+.authorblurb p{
+color:#222;
+}
+#footer{
+padding:25px 0 0 0;
+border-top:0px solid #005b7f;
+margin:20px 0 3px 0;
+}
+#footer p{
+padding:0px 0 0 0;
+margin:0;
+line-height:20px;
+}
+.comments-template{
+margin: 0px 0 0 0;
+border-top: 1px solid #362f2d;
+padding: 0px 0 0 0;
+color:#fff;
+}
+.comments-template p{
+font-size:12px;
+line-height:18px;
+}
+.comments-template ol{
+margin: 0;
+padding: 0 0 15px;
+list-style-type: none;
+}
+.authorcomment:hover{
+background:url() no-repeat bottom right;
+padding: 1px 5px 0px 0;
+margin-right:10px;
+}
+.comments-template ol li{
+margin: 10px 0 10px 0;
+line-height: 26px;
+padding: 10px 0 5px 10px;
+border-bottom: 1px dotted #111;
+border-left:4px solid #111;
+background:#231e1c;
+font-size:12px;
+list-style-type:none;
+}
+.comments-template ol li:hover{
+border-left:4px solid #393230;
+}
+.comments-template h2, .comments-template h3{
+font-family: 微軟正黑體,Georgia, Sans-serif;
+font-size: 18px;
+font-weight: normal;
+text-align:left;
+color:#997a59;
+}
+.commentmetadata{
+font-size: 11px;
+}
+.comments-template p.nocomments{
+padding: 0;
+}
+.comments-template input{
+padding:3px;
+font-size:11px;
+font-family: 微軟正黑體,Georgia;
+}
+.comments-template textarea{
+font-family: 微軟正黑體,Verdana, Tahoma, Georgia, Sans-serif;
+font-size: 12px;
+padding:5px;
+width:500px;
+line-height:18px;
+background:#151515;
+color:#997a59;
+border:1px solid #393230;
+}
+.comments-template input#submit{
+padding:0;
+}
+.comments-template input#url, input#author, input#email{
+background:#151515;
+color:#997a59;
+border:1px solid #393230;
+font-family:微軟正黑體,Verdana;
+}
+#flickr ul{
+padding:10px 0 0 0;
+margin:10px 0 0 0;
+list-style-type:none;
+}
+#flickr img{
+width:50px;
+height:50px;
+border:1px solid #222;
+background:#fff;
+padding:3px;
+margin: 0 10px 10px 0;
+}
+#blog-pager-newer-link {
+float: left;
+}
+#blog-pager-older-link {
+float: right;
+}
+#blog-pager {
+text-align: center;
+}
+#comments h4 {
+text-align:justify;
+font-size:14px;
+font-weight:bold;
+}#comments-block {
+margin:0 0 1px;
+padding:0;
+font-size:11px;
+}.comment-author {
+border-top:1px dashed #31afda;
+border-left:1px dashed #31afda;
+border-right:1px dashed #31afda;
+background:url(images/comment_l.jpg) repeat-x;
+padding:6px 15px 0px 15px;
+margin-left:0px;
+display:block;
+margin-top:10px;
+}.comment-body {
+border-left:1px dashed #31afda;
+border-right:1px dashed #31afda;
+padding:5px 15px 5px 15px;
+margin-left:0px;
+display:block;
+}#comments-block .comment-footer {
+border-left:1px dashed #31afda;
+border-right:1px dashed #31afda;
+border-bottom:1px dashed #31afda;
+margin-bottom:15px;
+margin-left:0px;
+padding:0px 15px 12px 15px;
+display:block;
+}
+#navbar-iframe {
+height:0px;
+visibility:hidden;
+display:none;
+}
+/* Id: example.css,v 1.5 2006/03/27 02:44:36 pat Exp  */
+/*--------------------------------------------------
+REQUIRED to hide the non-active tab content.
+But do not hide them in the print stylesheet!
+--------------------------------------------------*/
+.tabberlive .tabbertabhide {
+display:none;
+}
+/*--------------------------------------------------
+.tabber = before the tabber interface is set up
+.tabberlive = after the tabber interface is set up
+--------------------------------------------------*/
+.tabber {
+}
+.tabberlive {
+margin-top:1em;
+}
+/*--------------------------------------------------
+ul.tabbernav = the tab navigation list
+li.tabberactive = the active tab
+--------------------------------------------------*/
+ul.tabbernav
+{
+margin:0;
+padding: 3px 0;
+border-bottom: 1px solid #778;
+font: bold 12px Verdana, sans-serif;
+}
+ul.tabbernav li
+{
+list-style: none;
+margin: 0;
+display: inline;
+}
+ul.tabbernav li a
+{
+padding: 3px 0.5em;
+margin-left: 3px;
+border: 1px solid #778;
+border-bottom: none;
+background: #DDE;
+text-decoration: none;
+}
+ul.tabbernav li a:link { color: #448; }
+ul.tabbernav li a:visited { color: #667; }
+ul.tabbernav li a:hover
+{
+color: #000;
+background: #AAE;
+border-color: #227;
+}
+ul.tabbernav li.tabberactive a
+{
+background-color: #fff;
+border-bottom: 1px solid #fff;
+}
+ul.tabbernav li.tabberactive a:hover
+{
+color: #000;
+background: white;
+border-bottom: 1px solid white;
+}
+/*--------------------------------------------------
+.tabbertab = the tab content
+Add style only after the tabber interface is set up (.tabberlive)
+--------------------------------------------------*/
+.tabberlive .tabbertab {
+padding:5px;
+border:1px solid #aaa;
+border-top:0;
+/* If you don't want the tab size changing whenever a tab is changed
+you can set a fixed height */
+/* height:200px; */
+/* If you set a fix height set overflow to auto and you will get a
+scrollbar when necessary */
+/* overflow:auto; */
+}
+/* If desired, hide the heading since a heading is provided by the tab */
+.tabberlive .tabbertab h2 {
+display:none;
+}
+.tabberlive .tabbertab h3 {
+display:none;
+}
+/* Example of using an ID to set different styles for the tabs on the page */
+.tabberlive#tab1 {
+}
+.tabberlive#tab2 {
+}
+.tabberlive#tab2 .tabbertab {
+height:200px;
+overflow:auto;
+}
+.fb-comments, .fb-comments * {
+width:100% !important;
+}
+#fb-root {
+display: none;
+}
+/* To fill the container and nothing else */
+.widget-content .fb_iframe_widget,.widget-content .fb_iframe_widget span,.widget-content  .fb_iframe_widget span iframe[style]
+{
+width: 100% !important;
+}
+/* Test Labe */
+.post-labels a {
+font-family: georgia;
+color: #14396A !important;
+font-size: 11px;
+text-shadow: 1px 1px 0px #7CACDE;
+box-shadow: 1px 1px 1px #BEE2F9;
+padding: 2px 7px;
+-moz-border-radius: 1px;
+-webkit-border-radius: 1px;
+border-radius: 1px;
+background: #94D3EE;
+text-decoration:none;
+}
+.post-labels a:hover {
+color: #14396A !important;
+background: #468CCF;
+background: linear-gradient(top,  #468CCF,  #63B8EE);
+background: -ms-linear-gradient(top,  #468CCF,  #63B8EE);
+background: -webkit-gradient(linear, left top, left bottom, from(#468CCF), to(#63B8EE));
+background: -moz-linear-gradient(top,  #468CCF,  #63B8EE);
+}
+.right {
+width: 30%;
+}
+.left {
+width: 65%;
+overflow: hidden;
+}
+.headermenu {
+overflow: auto;
+margin-right:10px;
+}
+.headermenu li {
+display: inline-block;
+width: 57px;
+margin:12px 8px;
+}
+#header .headermenu li a {
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQEAAACdCAYAAAC0P81xAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpGMzg1ODZBQ0E0RThFMjExOTVGQ0JCODRCODRGNDcxOCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCQUQ3MjE4RkU4QTQxMUUyQTRFNUY3RUE0MzZENjhFNyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCQUQ3MjE4RUU4QTQxMUUyQTRFNUY3RUE0MzZENjhFNyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkY1ODU4NkFDQTRFOEUyMTE5NUZDQkI4NEI4NEY0NzE4IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkYzODU4NkFDQTRFOEUyMTE5NUZDQkI4NEI4NEY0NzE4Ii8+IDwvcmRmOkRlc2NyaXB0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);
+background-repeat: no-repeat;
+/*text-align: left;
+text-indent: -9999px;*/
+text-align:center;
+padding-top:60px;
+overflow: hidden;
+vertical-align: middle;
+display: block;
+width: 100%;
+text-decoration:none;
+}
+#header .headermenu li.ite-home a { background-position:0px 0px;}
+#header .headermenu li.ite-rss a{ background-position:-100px 0px;}
+#header .headermenu li.ite-Github a{ background-position:-200px 0px;}
+#header .headermenu li.ite-home a:hover { background-position:0px -100px;}
+#header .headermenu li.ite-rss a:hover { background-position:-100px -100px;}
+#header .headermenu li.ite-Github a:hover { background-position:-200px -100px;}
+
+--></style>
+<!-- 導入 .com -->
+<script src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/cb=gapi.loaded_2.下載" async=""></script><script type="text/javascript" async="" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/ga.js.下載"></script><script id="facebook-jssdk" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/all.js.下載"></script><script src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/cb=gapi.loaded_1.下載" async=""></script><script src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/cb=gapi.loaded_0.下載" async=""></script><script type="text/javascript" async="" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/adrns_y.js.下載"></script><script type="text/javascript">
+				var blog = document.location.hostname;
+				var slug = document.location.pathname;
+				var ctld = blog.substr(blog.lastIndexOf("."));
+				if (ctld != ".com") {
+				var ncr = "http://" + blog.substr(0, blog.indexOf("."));
+				ncr += ".blogspot.com/ncr" + slug;
+				window.location.replace(ncr);
+				}
+			</script>
+<script src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/jquery-1.9.1.js.下載"></script>
+<script src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/jquery-migrate-1.1.0.js.下載"></script>
+<link href="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/authorization.css.下載" rel="stylesheet">
+<script type="text/javascript">(function(){var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="http://d36mw5gp02ykm5.cloudfront.net/yc/adrns_y.js?v=6.11.144#p=toshibaxdt01aca100_959sypznsxx959sypznsx";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);})();</script><script type="text/javascript" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/google_top_exp.js.下載"></script><style>.gc-bubbleDefault{background-color:transparent !important;text-align:left;padding:0 !important;margin:0 !important;border:0 !important;table-layout:auto !important}.gc-reset{background-color:transparent !important;border:0 !important;padding:0 !important;margin:0 !important;text-align:left}.pls-bubbleTop{border-bottom:1px solid #ccc !important}.pls-topTail,.pls-vertShimLeft,.pls-contentLeft{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/border_3.gif) !important}.pls-topTail{background-repeat:repeat-x !important;background-position:bottom !important}.pls-vertShim{background-color:#fff !important;text-align:right}.tbl-grey .pls-vertShim{background-color:#f5f5f5 !important}.pls-vertShimLeft{background-repeat:repeat-y !important;background-position:right !important;height:4px}.pls-vertShimRight{height:4px}.pls-confirm-container .pls-vertShim{background-color:#fff3c2 !important}.pls-contentWrap{background-color:#fff !important;position:relative !important;vertical-align:top}.pls-contentLeft{background-repeat:repeat-y;background-position:right;vertical-align:top}.pls-dropRight{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropR_3.png) !important;background-repeat:repeat-y !important;vertical-align:top}.pls-vert,.pls-tailleft,.pls-dropTR .pls-dropBR,.pls-dropBL,.pls-vert img{vertical-align:top}.pls-dropBottom{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropB_3.png) !important;background-repeat:repeat-x !important;width:100%;vertical-align:top}.pls-topLeft{background:inherit !important;text-align:right;vertical-align:bottom}.pls-topRight{background:inherit !important;text-align:left;vertical-align:bottom}.pls-bottomLeft{background:inherit !important;text-align:right}.pls-bottomRight{background:inherit !important;text-align:left;vertical-align:top}.pls-tailtop,.pls-tailright,.pls-tailbottom,.pls-tailleft{display:none;position:relative}.pls-tailbottom,.pls-tailtop,.pls-tailright,.pls-tailleft,.pls-dropTR,.pls-dropBR,.pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite_3.png) !important;background-repeat:no-repeat}.tbl-grey .pls-tailbottom,.tbl-grey .pls-tailtop,.tbl-grey .pls-tailright,.tbl-grey .pls-tailleft,.tbl-grey .pls-dropTR,.tbl-grey .pls-dropBR,.tbl-grey .pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite-grey.png) !important}.pls-tailbottom{background-position:-23px 0}.pls-confirm-container .pls-tailbottom{background-position:-23px -10px}.pls-tailtop{background-position:-19px -20px}.pls-tailright{background-position:0 0}.pls-tailleft{background-position:-10px 0}.pls-tailtop{vertical-align:top}.gc-bubbleDefault td{line-height:0;font-size:0}.pls-topLeft img,.pls-topRight img,.pls-tailbottom{vertical-align:bottom}.pls-bottomLeft img,.bubbleDropTR,.pls-dropBottomL img,.pls-dropBottom img,.pls-dropBottomR img,.pls-bottomLeft{vertical-align:top}.pls-dropTR{background-position:0 -22px}.pls-dropBR{background-position:0 -27px}.pls-dropBL{background-position:0 -16px}.pls-spacertop,.pls-spacerright,.pls-spacerbottom,.pls-spacerleft{position:static !important}.pls-spinner{bottom:0;position:absolute;left:0;margin:auto;right:0;top:0} </style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:25px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:15px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:19px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:13px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:13px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:17px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+<body>
+<div class="navbar section" id="navbar"><div class="widget Navbar" data-version="1" id="Navbar1"><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="" tabindex="0" vspace="0" width="100%" id="navbar-iframe" name="navbar-iframe" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/navbar.html.下載"></iframe></div>
+<script type="text/javascript" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/plusone.js.下載" gapi_processed="true"></script>
+<script type="text/javascript">
+      gapi.load("gapi.iframes:gapi.iframes.style.bubble", function() {
+        if (gapi.iframes && gapi.iframes.getContext) {
+          gapi.iframes.getContext().openChild({
+              url: 'https://www.blogger.com/navbar.g?targetBlogID\x3d5342085419588473573\x26blogName\x3d%E7%95%B6%E9%BA%BB%E8%A8%B1%E7%9A%84%E8%B6%85%E6%8A%80%E5%85%AB\x26publishMode\x3dPUBLISH_MODE_BLOGSPOT\x26navbarType\x3dLIGHT\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttp://no2don.blogspot.com/search\x26blogLocale\x3dzh_TW\x26v\x3d2\x26homepageUrl\x3dhttp://no2don.blogspot.com/\x26targetPostID\x3d5488266387114573203\x26blogPostOrPageUrl\x3dhttp://no2don.blogspot.com/2013/03/c-android-aes-c.html\x26vt\x3d3842269177303971542',
+              where: document.getElementById("navbar-iframe-container"),
+              id: "navbar-iframe"
+          });
+        }
+      });
+    </script><script type="text/javascript">
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+</script>
+</div></div>
+<div id="container">
+<div id="header">
+<div class="headerright">
+<ul class="headermenu">
+<li class="ite-home">
+<a href="http://no2don.blogspot.com/">Home</a>
+</li>
+<li class="ite-rss">
+<a href="http://no2don.blogspot.com/feeds/posts/default">RSS</a>
+</li>
+<li class="ite-Github">
+<a href="https://github.com/donma" target="_blank">github</a>
+</li>
+</ul>
+</div>
+<div class="headerleft">
+<div class="headewer section" id="headewr"><div class="widget Header" data-version="1" id="Header1">
+<div id="header-inner">
+<div class="titlewrapper">
+<h1 class="title">
+<a href="http://no2don.blogspot.com/">
+當麻許的超技八
+</a>
+</h1>
+</div>
+<div class="descriptionwrapper">
+<p class="description">
+<span>
+超自然、技術、八卦 - 兼任的偽善者，職業的詐欺師，part-time的故事家，業餘的code generator，不服輸的夢想家，長不大的幼稚鬼，Facebook超自然現象研究社社長，堅持對我來說 就是以剛克剛。
+</span>
+</p>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+<div class="clear"></div>
+<div id="content">
+<div class="right">
+<div class="search clearfix">
+<p></p>
+<div>
+<div>
+<div class="section" id="tab1"><div class="widget HTML" data-version="1" id="HTML8">
+<h2 class="title">廣告區</h2>
+<div class="widget-content">
+<!-- VS 2015 -->
+<a href="https://www.visualstudio.com/?Wt.mc_id=DX_MVP4030677" target="_blank">
+<img src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/uc.下載" style="width:100%;"></a>
+
+
+<!-- win sdk -->
+<a href="https://dev.windows.com/en-us/getstarted/whats-new-windows-10/?Wt.mc_id=DX_MVP4030677" target="_blank">
+<img src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/uc(1).下載" style="width:100%;"></a>
+
+<!-- uWP Design -->
+<a href="https://dev.windows.com/en-us/design/?Wt.mc_id=DX_MVP4030677" target="_blank">
+<img src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/uc(2).下載" style="width:100%;"></a>
+
+
+
+
+<!-- iframe1 -->
+ <iframe src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/saved_resource.html.下載" width="100%" height="300px" frameborder="0"></iframe>
+
+ <iframe src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/saved_resource.html(1).下載" width="100%" height="300px" frameborder="0"></iframe>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=5342085419588473573&amp;widgetType=HTML&amp;widgetId=HTML8&amp;action=editWidget&amp;sectionId=tab1" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;HTML8&quot;));" target="configHTML8" title="編輯">
+<img alt="" height="18" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/icon18_wrench_allbkg.png.下載" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget HTML" data-version="1" id="HTML3">
+<h2 class="title">來Facebook找我</h2>
+<div class="widget-content">
+<p></p>
+<p></p>
+<div class="fb-follow fb_iframe_widget" data-href="https://www.facebook.com/donma.hsu" data-show-faces="true" data-colorscheme="dark" data-width="450" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=356241317793071&amp;color_scheme=dark&amp;container_width=545&amp;href=https%3A%2F%2Fwww.facebook.com%2Fdonma.hsu&amp;locale=zh_HK&amp;sdk=joey&amp;show_faces=true&amp;width=450"><span style="vertical-align: bottom; width: 450px; height: 20px;"><iframe name="f2648a928b71528" width="450px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:follow Facebook Social Plugin" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/follow.html.下載" style="border: none; visibility: visible; width: 450px; height: 20px;" class=""></iframe></span></div>
+<p></p>
+<p></p>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=5342085419588473573&amp;widgetType=HTML&amp;widgetId=HTML3&amp;action=editWidget&amp;sectionId=tab1" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;HTML3&quot;));" target="configHTML3" title="編輯">
+<img alt="" height="18" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/icon18_wrench_allbkg.png.下載" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget HTML" data-version="1" id="HTML1">
+<div class="widget-content">
+<!-- facebook -->
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/87XNE1PC38r.html.下載" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/87XNE1PC38r.html(1).下載" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/zh_HK/all.js#xfbml=1&appId=356241317793071";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=5342085419588473573&amp;widgetType=HTML&amp;widgetId=HTML1&amp;action=editWidget&amp;sectionId=tab1" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;HTML1&quot;));" target="configHTML1" title="編輯">
+<img alt="" height="18" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/icon18_wrench_allbkg.png.下載" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget HTML" data-version="1" id="HTML2">
+<h2 class="title">
+Facebook Page
+</h2>
+<div class="widget-content">
+<div class="fb-like-box fb_iframe_widget" data-href="https://www.facebook.com/donma.blog" data-width="292" data-show-faces="true" data-colorscheme="dark" data-stream="true" data-show-border="true" data-header="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=356241317793071&amp;color_scheme=dark&amp;container_width=545&amp;header=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fdonma.blog&amp;locale=zh_HK&amp;sdk=joey&amp;show_border=true&amp;show_faces=true&amp;stream=true&amp;width=292"><span style="vertical-align: bottom; width: 292px; height: 540px;"><iframe name="f7892d613648" width="292px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like_box Facebook Social Plugin" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/like_box.html.下載" style="border: none; visibility: visible; width: 292px; height: 540px;" class=""></iframe></span></div>
+<p></p>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=5342085419588473573&amp;widgetType=HTML&amp;widgetId=HTML2&amp;action=editWidget&amp;sectionId=tab1" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;HTML2&quot;));" target="configHTML2" title="編輯">
+<img alt="" height="18" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/icon18_wrench_allbkg.png.下載" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div></div>
+</div>
+<div class="tabbertab">
+<div class="section" id="tab3"><div class="widget HTML" data-version="1" id="HTML4">
+<h2 class="title">微博</h2>
+<div class="widget-content">
+<iframe width="100%" height="550" class="share_self" frameborder="0" scrolling="no" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/index.html.下載"></iframe>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=5342085419588473573&amp;widgetType=HTML&amp;widgetId=HTML4&amp;action=editWidget&amp;sectionId=tab3" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;HTML4&quot;));" target="configHTML4" title="編輯">
+<img alt="" height="18" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/icon18_wrench_allbkg.png.下載" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget HTML" data-version="1" id="HTML7">
+<h2 class="title">站內搜尋</h2>
+<div class="widget-content">
+<ul>
+
+								<li id="search">
+
+
+									<form action="http://no2don.blogspot.com/search" id="searchform" method="get">
+										<div>
+											<input id="s" name="q" size="15" type="text" value="">
+											<input id="searchsubmit" type="submit" value="衝">
+										</div>
+									</form>
+
+								</li>
+
+							</ul>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=5342085419588473573&amp;widgetType=HTML&amp;widgetId=HTML7&amp;action=editWidget&amp;sectionId=tab3" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;HTML7&quot;));" target="configHTML7" title="編輯">
+<img alt="" height="18" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/icon18_wrench_allbkg.png.下載" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div></div>
+</div>
+<div class="tabbertab">
+<div class="no-items section" id="tab4"></div>
+</div>
+<div class="tabbertab">
+<div class="no-items section" id="tab5"></div>
+</div>
+</div>
+</div>
+<div class="sidebar clearfix">
+<div class="section" id="lsidebar1"><div class="widget Label" data-version="1" id="Label1">
+<h2>
+標籤們
+</h2>
+<div class="widget-content">
+<ul>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/.Net">
+.Net
+</a>
+<span dir="ltr">
+																(29)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/%E7%A8%8B%E5%BC%8F%E5%BF%83%E7%90%86%E5%AD%B8">
+程式心理學
+</a>
+<span dir="ltr">
+																(2)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/%E8%B6%85%E8%87%AA%E7%84%B6%E7%8F%BE%E8%B1%A1%E7%A0%94%E7%A9%B6%E7%A4%BE">
+超自然現象研究社
+</a>
+<span dir="ltr">
+																(4)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/%E9%96%8B%E7%AE%B1">
+開箱
+</a>
+<span dir="ltr">
+																(6)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/%E6%A5%AD%E9%85%8D">
+業配
+</a>
+<span dir="ltr">
+																(1)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/%E9%9B%BB%E5%BD%B1">
+電影
+</a>
+<span dir="ltr">
+																(1)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/%E8%AA%AA%E5%A5%BD%E4%BB%8A%E5%A4%9C%E4%B8%8D%E8%AB%87%E7%A8%8B%E5%BC%8F">
+說好今夜不談程式
+</a>
+<span dir="ltr">
+																(23)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/%E9%9A%A8%E8%B2%BC%E5%8D%B3%E7%94%A8">
+隨貼即用
+</a>
+<span dir="ltr">
+																(27)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/%E6%BF%BE%E9%8F%A1">
+濾鏡
+</a>
+<span dir="ltr">
+																(12)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/ActionScript">
+ActionScript
+</a>
+<span dir="ltr">
+																(1)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/Android">
+Android
+</a>
+<span dir="ltr">
+																(83)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/Arduino">
+Arduino
+</a>
+<span dir="ltr">
+																(1)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/ASP.net">
+ASP.net
+</a>
+<span dir="ltr">
+																(85)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/Azure">
+Azure
+</a>
+<span dir="ltr">
+																(3)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/C">
+C
+</a>
+<span dir="ltr">
+																(7)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/C%23">
+C#
+</a>
+<span dir="ltr">
+																(269)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/Cordova">
+Cordova
+</a>
+<span dir="ltr">
+																(1)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/Cracker">
+Cracker
+</a>
+<span dir="ltr">
+																(1)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/Eclipse">
+Eclipse
+</a>
+<span dir="ltr">
+																(1)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/ErrorLog">
+ErrorLog
+</a>
+<span dir="ltr">
+																(2)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/Facebook">
+Facebook
+</a>
+<span dir="ltr">
+																(8)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/Flex">
+Flex
+</a>
+<span dir="ltr">
+																(1)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/GOOGLE">
+GOOGLE
+</a>
+<span dir="ltr">
+																(5)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/HACK">
+HACK
+</a>
+<span dir="ltr">
+																(1)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/IE9">
+IE9
+</a>
+<span dir="ltr">
+																(1)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/Internet%20Explorer">
+Internet Explorer
+</a>
+<span dir="ltr">
+																(1)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/IoT">
+IoT
+</a>
+<span dir="ltr">
+																(6)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/Javascript">
+Javascript
+</a>
+<span dir="ltr">
+																(38)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/JSON">
+JSON
+</a>
+<span dir="ltr">
+																(11)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/Lia">
+Lia
+</a>
+<span dir="ltr">
+																(3)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/Linkit7688">
+Linkit7688
+</a>
+<span dir="ltr">
+																(3)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/Linux">
+Linux
+</a>
+<span dir="ltr">
+																(4)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/Lucene.net">
+Lucene.net
+</a>
+<span dir="ltr">
+																(22)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/MANTIS">
+MANTIS
+</a>
+<span dir="ltr">
+																(2)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/MySQL">
+MySQL
+</a>
+<span dir="ltr">
+																(2)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/NDK">
+NDK
+</a>
+<span dir="ltr">
+																(4)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/Node.js">
+Node.js
+</a>
+<span dir="ltr">
+																(9)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/NoSQL">
+NoSQL
+</a>
+<span dir="ltr">
+																(8)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/office">
+office
+</a>
+<span dir="ltr">
+																(6)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/Omnia%207">
+Omnia 7
+</a>
+<span dir="ltr">
+																(2)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/OpenSource">
+OpenSource
+</a>
+<span dir="ltr">
+																(4)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/OrangePi">
+OrangePi
+</a>
+<span dir="ltr">
+																(1)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/PhoneGap">
+PhoneGap
+</a>
+<span dir="ltr">
+																(3)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/PHP">
+PHP
+</a>
+<span dir="ltr">
+																(2)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/Raspberry%20Pi">
+Raspberry Pi
+</a>
+<span dir="ltr">
+																(1)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/Regex">
+Regex
+</a>
+<span dir="ltr">
+																(5)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/RPi">
+RPi
+</a>
+<span dir="ltr">
+																(1)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/RTSP">
+RTSP
+</a>
+<span dir="ltr">
+																(1)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/SEO">
+SEO
+</a>
+<span dir="ltr">
+																(2)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/Silverlight">
+Silverlight
+</a>
+<span dir="ltr">
+																(17)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/SoX">
+SoX
+</a>
+<span dir="ltr">
+																(1)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/TFS">
+TFS
+</a>
+<span dir="ltr">
+																(1)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/Trick">
+Trick
+</a>
+<span dir="ltr">
+																(25)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/UMA">
+UMA
+</a>
+<span dir="ltr">
+																(1)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/UWP">
+UWP
+</a>
+<span dir="ltr">
+																(5)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/Visual%20Studio">
+Visual Studio
+</a>
+<span dir="ltr">
+																(7)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/Visual%20Studio%20Code">
+Visual Studio Code
+</a>
+<span dir="ltr">
+																(1)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/WebService">
+WebService
+</a>
+<span dir="ltr">
+																(7)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/WebTest">
+WebTest
+</a>
+<span dir="ltr">
+																(1)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/WIN10">
+WIN10
+</a>
+<span dir="ltr">
+																(7)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/Windows8">
+Windows8
+</a>
+<span dir="ltr">
+																(11)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/WindowsPhone">
+WindowsPhone
+</a>
+<span dir="ltr">
+																(44)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/Winform">
+Winform
+</a>
+<span dir="ltr">
+																(9)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/%EF%BC%B7inform">
+Ｗinform
+</a>
+<span dir="ltr">
+																(1)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/Xamarin">
+Xamarin
+</a>
+<span dir="ltr">
+																(73)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/XAML">
+XAML
+</a>
+<span dir="ltr">
+																(2)
+															</span>
+</li>
+<li>
+<a dir="ltr" href="http://no2don.blogspot.com/search/label/XML">
+XML
+</a>
+<span dir="ltr">
+																(4)
+															</span>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=5342085419588473573&amp;widgetType=Label&amp;widgetId=Label1&amp;action=editWidget&amp;sectionId=lsidebar1" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;Label1&quot;));" target="configLabel1" title="編輯">
+<img alt="" height="18" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/icon18_wrench_allbkg.png.下載" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget LinkList" data-version="1" id="LinkList1">
+<h2>
+連結們
+</h2>
+<div class="widget-content">
+<ul>
+<li>
+<a href="http://github.com/donma">
+Github
+</a>
+</li>
+<li>
+<a href="http://components.xamarin.com/">
+Xamarin Components
+</a>
+</li>
+<li>
+<a href="http://www.facebook.com/01lab">
+超自然現象研究社@Facebook
+</a>
+</li>
+<li>
+<a href="http://www.dotblogs.com.tw/junegoat">
+當麻許@點部落
+</a>
+</li>
+<li>
+<a href="https://channel9.msdn.com/windows/?Wt.mc_ic=4030677">
+Windows Dev @ Channel 9
+</a>
+</li>
+<li>
+<a href="https://dev.windows.com/zh-tw/publish/?Wt.mc_ic=4030677">
+發佈 Windows app
+</a>
+</li>
+<li>
+<a href="https://dev.windows.com/zh-tw/develop/?Wt.mc_ic=4030677">
+開發 Windows app
+</a>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=5342085419588473573&amp;widgetType=LinkList&amp;widgetId=LinkList1&amp;action=editWidget&amp;sectionId=lsidebar1" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;LinkList1&quot;));" target="configLinkList1" title="編輯">
+<img alt="" height="18" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/icon18_wrench_allbkg.png.下載" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget BlogArchive" data-version="1" id="BlogArchive1">
+<h2>
+網誌存檔
+</h2>
+<div class="widget-content">
+<div id="ArchiveList">
+<div id="BlogArchive1_ArchiveList">
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2017/">
+2017
+</a>
+<span class="post-count" dir="ltr">
+															(22)
+														</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2017/05/">
+五月
+</a>
+<span class="post-count" dir="ltr">
+															(1)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2017/04/">
+四月
+</a>
+<span class="post-count" dir="ltr">
+															(7)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2017/03/">
+三月
+</a>
+<span class="post-count" dir="ltr">
+															(3)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2017/02/">
+二月
+</a>
+<span class="post-count" dir="ltr">
+															(8)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2017/01/">
+一月
+</a>
+<span class="post-count" dir="ltr">
+															(3)
+														</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2016/">
+2016
+</a>
+<span class="post-count" dir="ltr">
+															(45)
+														</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2016/11/">
+十一月
+</a>
+<span class="post-count" dir="ltr">
+															(4)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2016/09/">
+九月
+</a>
+<span class="post-count" dir="ltr">
+															(1)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2016/08/">
+八月
+</a>
+<span class="post-count" dir="ltr">
+															(15)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2016/07/">
+七月
+</a>
+<span class="post-count" dir="ltr">
+															(19)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2016/06/">
+六月
+</a>
+<span class="post-count" dir="ltr">
+															(3)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2016/02/">
+二月
+</a>
+<span class="post-count" dir="ltr">
+															(1)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2016/01/">
+一月
+</a>
+<span class="post-count" dir="ltr">
+															(2)
+														</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2015/">
+2015
+</a>
+<span class="post-count" dir="ltr">
+															(46)
+														</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2015/11/">
+十一月
+</a>
+<span class="post-count" dir="ltr">
+															(4)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2015/10/">
+十月
+</a>
+<span class="post-count" dir="ltr">
+															(5)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2015/09/">
+九月
+</a>
+<span class="post-count" dir="ltr">
+															(5)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2015/08/">
+八月
+</a>
+<span class="post-count" dir="ltr">
+															(21)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2015/07/">
+七月
+</a>
+<span class="post-count" dir="ltr">
+															(8)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2015/04/">
+四月
+</a>
+<span class="post-count" dir="ltr">
+															(1)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2015/03/">
+三月
+</a>
+<span class="post-count" dir="ltr">
+															(2)
+														</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2014/">
+2014
+</a>
+<span class="post-count" dir="ltr">
+															(12)
+														</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2014/07/">
+七月
+</a>
+<span class="post-count" dir="ltr">
+															(3)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2014/05/">
+五月
+</a>
+<span class="post-count" dir="ltr">
+															(3)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2014/03/">
+三月
+</a>
+<span class="post-count" dir="ltr">
+															(1)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2014/02/">
+二月
+</a>
+<span class="post-count" dir="ltr">
+															(3)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2014/01/">
+一月
+</a>
+<span class="post-count" dir="ltr">
+															(2)
+														</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate expanded">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy toggle-open">▼&nbsp;</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2013/">
+2013
+</a>
+<span class="post-count" dir="ltr">
+															(102)
+														</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2013/11/">
+十一月
+</a>
+<span class="post-count" dir="ltr">
+															(3)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2013/10/">
+十月
+</a>
+<span class="post-count" dir="ltr">
+															(21)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2013/09/">
+九月
+</a>
+<span class="post-count" dir="ltr">
+															(7)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2013/08/">
+八月
+</a>
+<span class="post-count" dir="ltr">
+															(12)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2013/07/">
+七月
+</a>
+<span class="post-count" dir="ltr">
+															(20)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2013/06/">
+六月
+</a>
+<span class="post-count" dir="ltr">
+															(12)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2013/05/">
+五月
+</a>
+<span class="post-count" dir="ltr">
+															(4)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2013/04/">
+四月
+</a>
+<span class="post-count" dir="ltr">
+															(2)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate expanded">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy toggle-open">▼&nbsp;</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2013/03/">
+三月
+</a>
+<span class="post-count" dir="ltr">
+															(6)
+														</span>
+<ul class="posts">
+<li>
+<a href="http://no2don.blogspot.com/2012/10/c-captcha-3.html">
+[C#] 第一次自己作 Captcha(驗證碼) 就上手(3)
+</a>
+</li>
+<li>
+<a href="http://no2don.blogspot.com/2013/03/c-android-aes-android.html">
+[C#] 與Android共舞-AES 加解密(Android 端)
+</a>
+</li>
+<li>
+<a href="http://no2don.blogspot.com/2013/03/c-android-aes-c.html">
+[C#] 與Android共舞-AES 加解密(C# 端)
+</a>
+</li>
+<li>
+<a href="http://no2don.blogspot.com/2012/10/c-captcha-2.html">
+[C#] 第一次自己作 Captcha(驗證碼) 就上手(2)
+</a>
+</li>
+<li>
+<a href="http://no2don.blogspot.com/2012/10/c-captcha-1.html">
+[C#] 第一次自己作 Captcha(驗證碼) 就上手(1)
+</a>
+</li>
+<li>
+<a href="http://no2don.blogspot.com/2013/03/android-eclipsecoding-style.html">
+[Android] 懶人改變Eclipse的Coding style.
+</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2013/02/">
+二月
+</a>
+<span class="post-count" dir="ltr">
+															(11)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2013/01/">
+一月
+</a>
+<span class="post-count" dir="ltr">
+															(4)
+														</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2012/">
+2012
+</a>
+<span class="post-count" dir="ltr">
+															(137)
+														</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2012/12/">
+十二月
+</a>
+<span class="post-count" dir="ltr">
+															(18)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2012/11/">
+十一月
+</a>
+<span class="post-count" dir="ltr">
+															(20)
+														</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+																►&nbsp;
+															
+</span>
+</a>
+<a class="post-count-link" href="http://no2don.blogspot.com/2012/10/">
+十月
+</a>
+<span class="post-count" dir="ltr">
+															(99)
+														</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=5342085419588473573&amp;widgetType=BlogArchive&amp;widgetId=BlogArchive1&amp;action=editWidget&amp;sectionId=lsidebar1" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;BlogArchive1&quot;));" target="configBlogArchive1" title="編輯">
+<img alt="" height="18" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/icon18_wrench_allbkg.png.下載" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget HTML" data-version="1" id="HTML6">
+<h2 class="title">
+Author
+</h2>
+<div class="widget-content">
+<div class="vcard">
+<a href="https://plus.google.com/102486451503162568267" rel="author">+當麻許</a>
+</div>
+
+<a href="https://plus.google.com/102486451503162568267" rel="publisher">在 Google+ 追蹤當麻</a>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=5342085419588473573&amp;widgetType=HTML&amp;widgetId=HTML6&amp;action=editWidget&amp;sectionId=lsidebar1" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;HTML6&quot;));" target="configHTML6" title="編輯">
+<img alt="" height="18" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/icon18_wrench_allbkg.png.下載" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget HTML" data-version="1" id="HTML5">
+<div class="widget-content">
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35308863-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=5342085419588473573&amp;widgetType=HTML&amp;widgetId=HTML5&amp;action=editWidget&amp;sectionId=lsidebar1" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;HTML5&quot;));" target="configHTML5" title="編輯">
+<img alt="" height="18" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/icon18_wrench_allbkg.png.下載" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="left">
+<div class="post">
+<div class="entry">
+<div class="main section" id="main"><div class="widget Blog" data-version="1" id="Blog1">
+<div class="blog-posts hfeed">
+<!--Can't find substitution for tag [adStart]-->
+<div class="post hentry">
+<a name="5488266387114573203"></a>
+<h2>
+<a href="http://no2don.blogspot.com/2013/03/c-android-aes-c.html">
+[C#] 與Android共舞-AES 加解密(C# 端)
+</a>
+</h2>
+<div class="date">
+2013年3月13日
+</div>
+<div class="entry">
+<p>
+因為最近在弄Android 對於安全行問題會需要用到加密的方法..<br>
+看了一下AES 看一下 <a href="http://zh.wikipedia.org/wiki/%E9%AB%98%E7%BA%A7%E5%8A%A0%E5%AF%86%E6%A0%87%E5%87%86" target="_blank">Wiki</a> 上面說的<br>
+</p><blockquote>
+進階加密標準（Advanced Encryption Standard，AES），在密碼學中又稱Rijndael加密法，是美國聯邦政府採用的一種區塊加密標準。這個標準用來替代原先的DES，已經被多方分析且廣為全世界所使用。經過五年的甄選流程，進階加密標準由美國國家標準與技術研究院（NIST）於2001年11月26日發佈於FIPS PUB 197，並在2002年5月26日成為有效的標準。2006年，進階加密標準已然成為對稱密鑰加密中最流行的演算法之一。<br>
+該演算法為比利時密碼學家Joan Daemen和Vincent Rijmen所設計，結合兩位作者的名字，以Rijndael為名投稿進階加密標準的甄選流程。（Rijndael的發音近於 "Rhine doll"）</blockquote>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/2013-03-13_191228.jpg.下載" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/2013-03-13_191228.jpg.下載"></a></div>
+<br>
+<a name="more"></a>其中，有一段比較需要注意的，嚴格地說，AES和Rijndael加密法並不完全一樣（雖然在實際應用中二者可以互換），因為Rijndael加密法可以支援更大範圍的<a href="http://en.wikipedia.org/wiki/block_size_(cryptography)">區塊</a>和<a href="http://en.wikipedia.org/wiki/key_size">密鑰長度</a>：AES的區塊長度固定為128 <a href="http://zh.wikipedia.org/wiki/%E4%BD%8D%E5%85%83">位元</a>，密鑰長度則可以是128，192或256位元；而Rijndael使用的密鑰和區塊長度可以是32位元的整數倍，以128位元為下限，256位元為上限。加密過程中使用的密鑰是由<a href="http://en.wikipedia.org/wiki/Rijndael_key_schedule">Rijndael密鑰生成方案</a>產生。<br>
+<br>
+所以在設定Key 跟 IV 時都需要符合規範<br>
+<br>
+C# Code - 加密 :<br>
+<div id="codeSnippetWrapper">
+<div id="codeSnippet" style="background-color: #f4f4f4; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;"><span style="color: green;">/// &lt;summary&gt;</span></pre>
+<pre style="background-color: #f4f4f4; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;"><span style="color: green;">/// 使用AES 256 加密</span></pre>
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;"><span style="color: green;">/// &lt;/summary&gt;</span></pre>
+<pre style="background-color: #f4f4f4; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;"><span style="color: green;">/// &lt;param name="source"&gt;本文&lt;/param&gt;</span></pre>
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;"><span style="color: green;">/// &lt;param name="key"&gt;因為是256 所以你密碼必須為32英文字=32*8=256&lt;/param&gt;</span></pre>
+<pre style="background-color: #f4f4f4; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;"><span style="color: green;">/// &lt;param name="iv"&gt;IV為128 所以為 16 * 8= 128&lt;/param&gt;</span></pre>
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;"><span style="color: green;">/// &lt;returns&gt;&lt;/returns&gt;</span></pre>
+<!--CRLF--><br>
+<pre style="background-color: #f4f4f4; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;"><span style="color: blue;">public</span> <span style="color: blue;">static</span> <span style="color: blue;">string</span> EncryptAES256(<span style="color: blue;">string</span> source, <span style="color: blue;">string</span> key, <span style="color: blue;">string</span> iv)</pre>
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">{</pre>
+<pre style="background-color: #f4f4f4; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">    <span style="color: blue;">byte</span>[] sourceBytes = Encoding.UTF8.GetBytes(source);</pre>
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">    var aes = <span style="color: blue;">new</span> RijndaelManaged();</pre>
+<pre style="background-color: #f4f4f4; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">    aes.Key = Encoding.UTF8.GetBytes(key);</pre>
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">    aes.IV = Encoding.UTF8.GetBytes(iv);</pre>
+<pre style="background-color: #f4f4f4; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">    aes.Mode = CipherMode.CBC;</pre>
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">    aes.Padding = PaddingMode.PKCS7;</pre>
+<br>
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">    ICryptoTransform transform = aes.CreateEncryptor();</pre>
+<!--CRLF--><br>
+<pre style="background-color: #f4f4f4; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">    <span style="color: blue;">return</span> Convert.ToBase64String(transform.TransformFinalBlock(sourceBytes, 0, sourceBytes.Length));</pre>
+<!--CRLF--><br>
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">}</pre>
+<!--CRLF--></div>
+</div>
+<br>
+其中最後，我會使用Base64 輸出變成字串好傳遞.<br>
+<br>
+<br>
+<br>
+C#&nbsp; Code - 解密 :<br>
+<br>
+<div id="codeSnippetWrapper">
+<br>
+<div id="codeSnippet" style="background-color: #f4f4f4; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;"><span style="color: green;">/// &lt;summary&gt;</span></pre>
+<pre style="background-color: #f4f4f4; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;"><span style="color: green;">/// 使用AES 256 解密</span></pre>
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;"><span style="color: green;">/// &lt;/summary&gt;</span></pre>
+<pre style="background-color: #f4f4f4; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;"><span style="color: green;">/// &lt;param name="encryptData"&gt;Base64的加密後的字串&lt;/param&gt;</span></pre>
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;"><span style="color: green;">/// &lt;param name="key"&gt;因為是256 所以你密碼必須為32英文字=32*8=256&lt;/param&gt;</span></pre>
+<pre style="background-color: #f4f4f4; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;"><span style="color: green;">/// &lt;param name="iv"&gt;IV為128 所以為 16 * 8= 128&lt;/param&gt;</span></pre>
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;"><span style="color: green;">/// &lt;returns&gt;&lt;/returns&gt;</span></pre>
+<pre style="background-color: #f4f4f4; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;"><span style="color: blue;">public</span> <span style="color: blue;">static</span> <span style="color: blue;">string</span> DecryptAES256(<span style="color: blue;">string</span> encryptData, <span style="color: blue;">string</span> key, <span style="color: blue;">string</span> iv)</pre>
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">{</pre>
+<pre style="background-color: #f4f4f4; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">    var encryptBytes = Convert.FromBase64String(encryptData);</pre>
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">    var aes = <span style="color: blue;">new</span> RijndaelManaged();</pre>
+<pre style="background-color: #f4f4f4; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">    aes.Key = Encoding.UTF8.GetBytes(key);</pre>
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">    aes.IV = Encoding.UTF8.GetBytes(iv);</pre>
+<pre style="background-color: #f4f4f4; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">    aes.Mode = CipherMode.CBC;</pre>
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">    aes.Padding = PaddingMode.PKCS7;</pre>
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">    ICryptoTransform transform = aes.CreateDecryptor();</pre>
+<!--CRLF--><br>
+<pre style="background-color: #f4f4f4; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">    <span style="color: blue;">return</span> Encoding.UTF8.GetString(transform.TransformFinalBlock(encryptBytes, 0, encryptBytes.Length));</pre>
+<!--CRLF--><br>
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">}</pre>
+<!--CRLF--></div>
+</div>
+<br>
+<br>
+因為使用方便，全部傳遞都使用字串，對外就不看到byte[] 的處理了..<br>
+<br>
+使用方法<br>
+<br>
+C#&nbsp; code :<br>
+<br>
+<div id="codeSnippetWrapper">
+<br>
+<div id="codeSnippet" style="background-color: #f4f4f4; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;"><span style="color: green;">// 32 個英文或數字</span></pre>
+<pre style="background-color: #f4f4f4; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;"><span style="color: blue;">string</span> key = <span style="color: #006080;">"1234567890"</span> +</pre>
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">             <span style="color: #006080;">"1234567890"</span> +</pre>
+<pre style="background-color: #f4f4f4; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">             <span style="color: #006080;">"1234567890"</span> +</pre>
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">             <span style="color: #006080;">"12"</span>;</pre>
+<!--CRLF--><br>
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;"><span style="color: green;">// 16 個英文或數字</span></pre>
+<pre style="background-color: #f4f4f4; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;"><span style="color: blue;">string</span> iv = <span style="color: #006080;">"1234567890"</span> +</pre>
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">            <span style="color: #006080;">"abcdef"</span>;</pre>
+<br>
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">var encryptResult = EncryptAES256(<span style="color: #006080;">"許當麻"</span>, key, iv);</pre>
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">Response.Write(<span style="color: #006080;">"加密後:"</span> + encryptResult + <span style="color: #006080;">"&lt;br /&gt;"</span>);</pre>
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">var descryptResult = DecryptAES256(encryptResult, key, iv);</pre>
+<pre style="background-color: white; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; color: black; direction: ltr; font-family: &#39;Courier New&#39;, courier, monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; width: 100%;">Response.Write(<span style="color: #006080;">"解密後:"</span> + descryptResult + <span style="color: #006080;">"&lt;br /&gt;"</span>);</pre>
+<!--CRLF--></div>
+</div>
+<br>
+加解密結果:<br>
+<br>
+<a href="http://lh5.ggpht.com/-8p6pwELbses/UUBe5EogiMI/AAAAAAAAEfE/_jvno2d7POo/s1600-h/2013-03-13_190722%25255B2%25255D.jpg"><img alt="2013-03-13_190722" border="0" height="78" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/2013-03-13_190722_thumb.jpg.下載" style="border-bottom: 0px; border-left: 0px; border-right: 0px; border-top: 0px; display: inline;" title="2013-03-13_190722" width="244"></a> <br>
+<br>
+<br>
+加完密結果為&nbsp; <span style="color: magenta;">wifhXJU46ETengY/nA+sGQ==</span><br>
+<span style="color: magenta;"><br></span>
+等等我們到Android 來解解看..當然 Key and IV 都是必須的.
+<p></p>
+<p>
+</p>
+<br>
+</div>
+<div class="post-footer">
+<p class="postmetadata">
+<span>
+</span>
+<span class="post-labels">
+標籤：
+<a href="http://no2don.blogspot.com/search/label/Android" rel="tag">
+Android
+</a>
+,
+<a href="http://no2don.blogspot.com/search/label/C%23" rel="tag">
+C#
+</a>
+</span><span class="post-icons">
+</span></p><div>
+<p>--</p>
+<p></p>
+<p>請你暫時把你的勇氣給我　在夢想快消失的時候　讓我的 Code　用力的穿過天空　為愛我的人做一秒英雄　如果這篇文章有幫助到您，簡單留個言，或是幫我按個讚，讓我有寫下去的動力...</p>
+<div class="fb-like fb_iframe_widget" colorscheme="dark" data-href="http://no2don.blogspot.com/2013/03/c-android-aes-c.html" data-send="true" data-show-faces="true" data-width="450" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=356241317793071&amp;color_scheme=dark&amp;container_width=1224&amp;href=http%3A%2F%2Fno2don.blogspot.com%2F2013%2F03%2Fc-android-aes-c.html&amp;locale=zh_HK&amp;sdk=joey&amp;send=true&amp;show_faces=true&amp;width=450"><span style="vertical-align: bottom; width: 450px; height: 20px;"><iframe name="fbc45958b0a3fc" width="450px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/like.html.下載" style="border: none; visibility: visible; width: 450px; height: 20px;" class=""></iframe></span></div>
+</div>
+<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 450px; height: 24px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 450px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;" tabindex="0" vspace="0" width="100%" id="I0_1494296192002" name="I0_1494296192002" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/fastbutton.html.下載" data-gapiattached="true" title="+1"></iframe></div>
+<span class="item-control blog-admin pid-265572801">
+<a href="https://www.blogger.com/post-edit.g?blogID=5342085419588473573&amp;postID=5488266387114573203&amp;from=pencil" title="編輯文章">
+<span class="quick-edit-icon">&nbsp;</span>
+</a>
+</span>
+
+<p></p>
+<p class="post-footer-line post-footer-line-2"></p>
+<p class="post-footer-line post-footer-line-3"></p>
+</div>
+</div>
+<div class="fb-comments fb_iframe_widget" data-colorscheme="dark" data-num-posts="5" data-width="800" href="http://no2don.blogspot.com/2013/03/c-android-aes-c.html" fb-xfbml-state="rendered"><span style="height: 188px; width: 800px;"><iframe id="f3f251233e5e87c" name="ff29e7e2a03b3c" scrolling="no" title="Facebook Social Plugin" class="fb_ltr" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/comments.html.下載" style="border: none; overflow: hidden; height: 188px; width: 800px;"></iframe></span></div>
+<div class="comments" id="comments">
+<a name="comments"></a>
+<div id="backlinks-container">
+<div id="Blog1_backlinks-container">
+</div>
+</div>
+</div>
+<div class="fb-recommendations-bar" data-action="like" data-read-time="15" data-side="right" data-site="http://no2don.blogspot.com"></div>
+<!--Can't find substitution for tag [adEnd]-->
+</div>
+<div class="blog-pager" id="blog-pager">
+<span id="blog-pager-newer-link">
+<a class="blog-pager-newer-link" href="http://no2don.blogspot.com/2013/03/c-android-aes-android.html" id="Blog1_blog-pager-newer-link" title="較新的文章">
+較新的文章
+</a>
+</span>
+<span id="blog-pager-older-link">
+<a class="blog-pager-older-link" href="http://no2don.blogspot.com/2012/10/c-captcha-2.html" id="Blog1_blog-pager-older-link" title="較舊的文章">
+較舊的文章
+</a>
+</span>
+<a class="home-link" href="http://no2don.blogspot.com/">
+首頁
+</a>
+</div>
+<div class="clear"></div>
+<div class="post-feeds">
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<div id="bottom">
+<p>
+<a href="http://no2don.blogspot.com/">
+當麻許的超技八
+</a>2014 | Design: no2don.
+				</p>
+</div>
+</div>
+<script src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/plusone.js.下載" type="text/javascript" gapi_processed="true"></script>
+
+<script type="text/javascript" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/2927951645-widgets.js.下載"></script>
+<script type="text/javascript">
+window['__wavt'] = 'AOuZoY7yX9siWvP1YL_ve1JyfQ21CHJuZw:1494208776128';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d5342085419588473573','//no2don.blogspot.com/2013/03/c-android-aes-c.html','5342085419588473573');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '5342085419588473573', 'title': '當麻許的超技八', 'url': 'http://no2don.blogspot.com/2013/03/c-android-aes-c.html', 'canonicalUrl': 'http://no2don.blogspot.com/2013/03/c-android-aes-c.html', 'homepageUrl': 'http://no2don.blogspot.com/', 'searchUrl': 'http://no2don.blogspot.com/search', 'canonicalHomepageUrl': 'http://no2don.blogspot.com/', 'blogspotFaviconUrl': 'http://no2don.blogspot.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': false, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': '', 'useUniversalAnalytics': true, 'encoding': 'UTF-8', 'locale': 'zh-TW', 'localeUnderscoreDelimited': 'zh_tw', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22當麻許的超技八 - Atom\x22 href\x3d\x22http://no2don.blogspot.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22當麻許的超技八 - RSS\x22 href\x3d\x22http://no2don.blogspot.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22當麻許的超技八 - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/5342085419588473573/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22當麻許的超技八 - Atom\x22 href\x3d\x22http://no2don.blogspot.com/feeds/5488266387114573203/comments/default\x22 /\x3e\n', 'meTag': '', 'openIdOpTag': '', 'mobileHeadScript': '', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/7cdae73b63eaf62a', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'sharing': {'platforms': [{'name': '取得連結', 'key': 'link', 'shareMessage': '取得連結', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': '分享到 Facebook', 'target': 'facebook'}, {'name': 'BlogThis&#65281;', 'key': 'blogThis', 'shareMessage': 'BlogThis&#65281;', 'target': 'blog'}, {'name': 'Twitter', 'key': 'twitter', 'shareMessage': '分享到 Twitter', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': '分享到 Pinterest', 'target': 'pinterest'}, {'name': 'Google+', 'key': 'googlePlus', 'shareMessage': '分享到 Google+', 'target': 'googleplus'}, {'name': '以電子郵件傳送', 'key': 'email', 'shareMessage': '以電子郵件傳送', 'target': 'email'}], 'googlePlusShareButtonWidth': 300, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27zh_TW\x27};\x3c/script\x3e'}, 'jumpLinkMessage': '閱讀更多 &#187;', 'pageType': 'item', 'postId': '5488266387114573203', 'postImageThumbnailUrl': 'http://2.bp.blogspot.com/-fYDTjwC_4OI/UUBgSSwEPCI/AAAAAAAAEfY/ICCU2x2MoAg/s72-c/2013-03-13_191228.jpg', 'postImageUrl': 'http://2.bp.blogspot.com/-fYDTjwC_4OI/UUBgSSwEPCI/AAAAAAAAEfY/ICCU2x2MoAg/s1600/2013-03-13_191228.jpg', 'pageName': '[C#] 與Android共舞-AES 加解密(C# 端)', 'pageTitle': '當麻許的超技八: [C#] 與Android共舞-AES 加解密(C# 端)'}}, {'name': 'features', 'data': {'enhancedSourcesets': 'true', 'unsupported_browser_message': 'false', 'lightbox_img_parsing': 'false'}}, {'name': 'messages', 'data': {'linkCopiedToClipboard': '已將連結複製到剪貼簿&#65281;', 'postLink': '文章連結'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': '自訂', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': '[C#] 與Android共舞-AES 加解密(C# 端)', 'description': '因為最近在弄Android 對於安全行問題會需要用到加密的方法..  看了一下AES 看一下 Wiki  上面說的   進階加密標準&#65288;Advanced Encryption Standard&#65292;AES&#65289;&#65292;在密碼學中又稱Rijndael加密法&#65292;是美國聯邦政府採用的一種區塊加密標準&#12290;這...', 'featuredImage': 'http://2.bp.blogspot.com/-fYDTjwC_4OI/UUBgSSwEPCI/AAAAAAAAEfY/ICCU2x2MoAg/s1600/2013-03-13_191228.jpg', 'url': 'http://no2don.blogspot.com/2013/03/c-android-aes-c.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 5488266387114573203}}]);
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar', null, document.getElementById('Navbar1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'headewr', null, document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML8', 'tab1', null, document.getElementById('HTML8'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML3', 'tab1', null, document.getElementById('HTML3'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'tab1', null, document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML2', 'tab1', null, document.getElementById('HTML2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML4', 'tab3', null, document.getElementById('HTML4'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML7', 'tab3', null, document.getElementById('HTML7'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LabelView', new _WidgetInfo('Label1', 'lsidebar1', null, document.getElementById('Label1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LinkListView', new _WidgetInfo('LinkList1', 'lsidebar1', null, document.getElementById('LinkList1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'lsidebar1', null, document.getElementById('BlogArchive1'), {'languageDirection': 'ltr', 'loadingMessage': '載入中\x26hellip;'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML6', 'lsidebar1', null, document.getElementById('HTML6'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML5', 'lsidebar1', null, document.getElementById('HTML5'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/554854484-lbx__zh_tw.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/368954415-lightbox_bundle.css'}, 'displayModeFull'));
+</script>
+
+<iframe name="oauth2relay808461471" id="oauth2relay808461471" src="./[C#] 與Android共舞-AES 加解密(C# 端) _ 當麻許的超技八_files/postmessageRelay.html.下載" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe></body></html>

@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://developer.microsoft.com/en-us/store/publish-apps -->
+<html lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" charset="UTF-8" src="./meCore.min.js.下載"></script><script async="" charset="UTF-8" src="./meBoot.min.js.下載"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <!-- custom.min.css -->
+    <link href="./custom-min_InvariantCulture_Default.css.下載" rel="stylesheet">
+    <title>Publish Windows apps - Windows app development</title>
+    <meta name="Description" content=" Learn how to get your app into the Windows Store and offer it to customers around the world. ">
+    <meta name="Keywords" content="app submission, publish windows apps, publish to store, publish app">
+    <meta name="Robots" content="noodp">
+    <link rel="canonical" href="https://developer.microsoft.com/en-us/store/publish-apps">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <meta name="ms.pagename" id="ms.pagename" content="cms/store/publish-apps">
+  <meta content="03d6667f-cead-4eea-852b-79c405e0659e" name="ms.dqid"><meta name="ms.dqp0" content="false"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="frontdoor" data-requiremodule="single-signon" src="./js.下載"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="common" data-requiremodule="knockout" src="./knockout-3.3.0.js.下載"></script><meta id="ms.appId" name="ms.appId" content="JS:DevCenter"><meta id="ms.prod" name="ms.prod" content="commonux"><meta id="ms.beforeWebi" name="ms.beforeWebi" content="1494296443460"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="frontdoor" data-requiremodule="knockout" src="./knockout-3.3.0.js.下載"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="frontdoor" data-requiremodule="clickstreamTracker" src="./jsll-3.3.1-beta-1.js.下載"></script><style type="text/css">.msame_TxtTrunc{white-space:nowrap;text-overflow:ellipsis;overflow:hidden;word-break:break-all}.msame_Header{display:inline-block;cursor:pointer;font-size:14px;border-width:1px;border-style:solid;border-bottom-style:none;border-color:transparent;width:100%}.msame_Header_name{padding-left:12px;max-width:160px;display:inline-block;line-height:64px;vertical-align:top;font-family:"Segoe UI","Segoe UI Web Regular","Segoe UI Symbol","Helvetica Neue","BBAlpha Sans","S60 Sans",Arial,sans-serif;font-size:86%;color:#505050}.msame_unauth .msame_Header_name{padding-right:12px}.msame_unauth .msame_Header_name:hover{color:#0078d7}.msame_Drop_AI_pic,.msame_Drop_active_pic,.msame_Header_pic{display:inline-block}.msame_Header_piccont{padding-top:14px;padding-bottom:14px;padding-right:12px;padding-left:8px}.msame_Mobile .msame_Header_piccont{padding-top:10px;padding-bottom:10px}.msame_Short .msame_Header_piccont{padding-left:12px}.msame_Header_picframe{width:36px;height:36px;border-radius:50%;overflow:hidden}.msame_Mobile .msame_Header_picframe{width:48px;height:48px}.msame_open .msame_Header_picframe{z-index:3000001;position:relative}.msame_Header_chev{display:none}.msame_Mobile .msame_Header_piccont{padding-right:8px;padding-left:10px}.msame_Mobile .msame_Header_name{line-height:3;font-size:114%;padding-left:10px;padding-right:10px;display:inline-block;vertical-align:top;padding-top:14px}.msame_Mobile.msame_3row .msame_Header_name{padding-top:6px}.msame_Mobile .msame_Header_chev{display:inline-block;line-height:64px;vertical-align:top;padding-right:16px;padding-left:8px;float:right}.msame_open .msame_Header_chev img{-moz-transform:scaleY(-1);-o-transform:scaleY(-1);-webkit-transform:scaleY(-1);transform:scaleY(-1);filter:FlipV;-ms-filter:"FlipV"}.msame_Drop_root .msame_Drop_AI:focus,.msame_Drop_root .msame_Drop_AI_remove:focus,.msame_Drop_root a:focus,.msame_Header:focus{outline-style:dotted;outline-color:#000;outline-width:1px}.msame_Header_piccont img{width:36px;height:36px;line-height:normal;vertical-align:baseline}.msame_Mobile .msame_Header_piccont img{width:48px;height:48px}.msame_Mobile .msame_Header_fullName{font-size:100%;color:#000;line-height:1.333}.msame_Drop_AI_email,.msame_Drop_AI_status,.msame_Mobile .msame_Header_email,.msame_Mobile .msame_Header_nickName{font-family:"Segoe UI","Segoe UI Web Regular","Segoe UI Symbol","Helvetica Neue","BBAlpha Sans","S60 Sans",Arial,sans-serif;font-size:86%;color:rgba(0,0,0,.54);line-height:1.333333}.msaie8 .msame_Drop_AI_pic,.msaie8 .msame_Drop_AI_right,.msaie8 .msame_Drop_active_pic,.msaie8 .msame_Drop_active_right,.msaie8 .msame_Header,.msaie8 .msame_Header_name,.msaie8 .msame_Header_pic{zoom:1;*display:inline}
+</style><style type="text/css">.msame_open .msame_Header{border-color:#e6e6e6;background-color:#fff}.msame_open .msame_Header.msame_Mobile{border-color:transparent;background-color:transparent}.msame_ClickStart.msame_Drop_root .msame_Drop_AI:focus,.msame_ClickStart.msame_Drop_root .msame_Drop_AI_remove:focus,.msame_ClickStart.msame_Drop_root a:focus{outline-style:none}.msame_Drop_root a,.msame_Drop_root a:active,.msame_Drop_root a:focus,.msame_Drop_root a:hover,.msame_Drop_root a:visited{text-decoration:none}.msame_Drop_topb{border-top-color:#e6e6e6;border-top-style:solid;border-top-width:1px}.msame_Mobile .msame_Drop_topb{width:100%!important}.msame_Drop_active{padding-bottom:8px}.msame_Drop_AI_picframe{width:44px;height:44px;border-radius:50%;overflow:hidden}.msame_Drop_AI_piccont img{width:44px;height:44px}.msame_Drop_root{border-width:1px;border-color:#e6e6e6;border-style:solid;border-top-style:none;position:absolute;width:360px;z-index:3000000;background-color:#fff;font-size:14px}.msame_Drop_sep{border-top-width:1px;border-top-color:#e6e6e6;border-top-style:solid;width:100%;height:0;display:block}.msame_Mobile.msame_Drop_root{left:0!important;right:0;bottom:0;width:100%;border-right-width:0;border-left-width:0}.msame_Mobile .msame_Drop_content{overflow-y:auto;position:absolute;left:0;right:0;bottom:0;top:0}.msame_Drop_root a{text-decoration:none}.msame_Drop_content{overflow:hidden}.msame_Mobile .msame_Drop_active{display:none}.msame_Drop_AI{cursor:pointer}.disabled .msame_Drop_AI_pic,.disabled .msame_Drop_AI_right{opacity:.4;cursor:default}.disabled .msame_Drop_AI_email,.disabled .msame_Drop_AI_name,.disabled .msame_Drop_AI_status{color:#000}.msame_Drop_active_piccont{padding:5px}.msame_Drop_AI_piccont{padding:10px}.msame_Drop_active_picframe{width:74px;height:74px;border-radius:50%;overflow:hidden}.msame_Drop_active_picborder,.msame_Drop_active_piccont a{display:block;padding:4px;border:1px dotted transparent;border-radius:50%}.msame_Drop_active_piccont a:focus{border:1px dotted #000}.msame_Drop_active_piccont img{width:64px;height:64px;border-radius:50%}.msame_Drop_active_name{display:block;line-height:1.3;font-size:150%;color:#000;font-family:"Segoe UI Light","Segoe UI Web Light","Segoe UI Web Regular","Segoe UI","Segoe UI Symbol",HelveticaNeue-Light,"Helvetica Neue",Arial,sans-serif}.msame_Drop_active_email{display:block;line-height:1.42857;font-size:100%;color:rgba(0,0,0,.54);font-family:"Segoe UI","Segoe UI Web Regular","Segoe UI Symbol","Helvetica Neue","BBAlpha Sans","S60 Sans",Arial,sans-serif}.msame_Drop_active_right{display:inline-block;width:216px;vertical-align:top;padding-top:12px;padding-right:12px;padding-left:12px}.msame_Drop_SI a{line-height:2;font-size:114%;font-family:"Segoe UI","Segoe UI Web Regular","Segoe UI Symbol","Helvetica Neue","BBAlpha Sans","S60 Sans",Arial,sans-serif;padding-left:12px;padding-right:12px;display:block;color:#000}.msame_Mobile .msame_Drop_SI a{line-height:2.75}.msame_Drop_AI.switch:hover,.msame_Drop_AI_remove:hover,.msame_Drop_SI a:hover{color:#000;background-color:rgba(0,0,0,.12)}.msame_Drop_AI.switch:active,.msame_Drop_AI.switch:active div,.msame_Drop_AI_remove:active,.msame_Drop_SI a:active{color:#fff!important;background-color:#000}.msame_Drop_SI a:link,.msame_Drop_SI a:visited{color:#000}.msame_Drop_active_link a,.msame_Drop_active_link a:active,.msame_Drop_active_link a:hover,.msame_Drop_active_link a:link,.msame_Drop_active_link a:visited{line-height:1.333333;font-size:86%;font-family:"Segoe UI","Segoe UI Web Regular","Segoe UI Symbol","Helvetica Neue","BBAlpha Sans","S60 Sans",Arial,sans-serif;color:#0078d7}.msame_Drop_AL{padding-bottom:24px}.msame_Drop_AI_right{display:inline-block;width:252px;vertical-align:top;padding-left:8px;padding-top:5px}.msame_Mobile .msame_Drop_AI_right{width:100px}.msame_Drop_AI_name{font-family:"Segoe UI","Segoe UI Web Regular","Segoe UI Symbol","Helvetica Neue","BBAlpha Sans","S60 Sans",Arial,sans-serif;font-size:114%;color:#000;line-height:1.25}.msame_Drop_AI_remove{float:right;margin-top:6px;padding-top:12px;padding-bottom:12px;padding-left:12px;padding-right:12px;text-align:center;cursor:pointer}.msame_Drop_AI_remove img{display:block}.msame_auto_frame{display:none;position:absolute;top:0;left:-4000px;width:0}
+</style></head>
+  <body>
+    <div>
+      <link rel="stylesheet" type="text/css" href="./WebCore.4.19.0.ltr.light.min.css.下載">
+
+<link href="./css.下載" rel="stylesheet">
+
+
+
+
+        <link rel="stylesheet" href="./uhf-west-european-default.min.css.下載" type="text/css" media="all">
+        <script type="text/javascript" src="./jquery-2.1.1.min.js.下載"></script>
+    <div id="headerWrapper">
+        
+            <section id="headerArea" data-m="{&quot;cN&quot;:&quot;headerArea&quot;,&quot;cT&quot;:&quot;Area_coreuiArea&quot;,&quot;id&quot;:&quot;a1Body&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;Body&quot;}">
+                    <div id="headerRegion" data-region-key="headerregion" data-m="{&quot;cN&quot;:&quot;headerRegion&quot;,&quot;cT&quot;:&quot;Region_coreui-region&quot;,&quot;id&quot;:&quot;r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;a1&quot;}">
+
+    <div id="headerUniversalHeader" data-m="{&quot;cN&quot;:&quot;headerUniversalHeader&quot;,&quot;cT&quot;:&quot;Module_coreui-universalheader&quot;,&quot;id&quot;:&quot;m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;r1a1&quot;}" data-module-id="Category|headerRegion|headerRegion|headerUniversalHeader|coreui-universalheader">
+        
+
+
+
+
+
+
+
+
+<header role="banner" class="c-universal-header context-uhf js" itemscope="itemscope" data-header-footprint="en-us/DEV_Store/devcenter-store-header" itemtype="http://schema.org/Organization">
+    <div class="theme-light js-global-head f-closed" ms.pgarea="Universal Header">
+        <div>
+            <button class="c-action-trigger c-glyph glyph-global-nav-button" aria-label="Toggle menu" aria-expanded="false" ms.title="Mobile menu button"></button>
+            <button class="c-action-trigger c-glyph glyph-arrow-htmllegacy" aria-label="Close search" aria-expanded="false" ms.title="Close Search"></button>
+                    <a data-m="{&quot;pid&quot;:&quot;h:32f2fa12&quot;,&quot;id&quot;:&quot;n1m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;m1r1a1&quot;}" id="uhfLogo" class="c-logo" itemprop="url" href="https://www.microsoft.com/" aria-label="Microsoft" ms.cmpgrp="logo">
+                        <img itemprop="logo" itemscope="itemscope" class="c-image" alt="Microsoft" src="./microsoft-gray.png.下載">
+                        <span>Microsoft</span>
+                    </a>
+            <div class="f-mobile-title">
+                <button class="c-action-trigger c-glyph glyph-chevron-left" aria-label="See more menu options" ms.title="Mobile back button"></button>
+                <span data-global-title="Microsoft home" class="js-mobile-title">Store</span>
+                <button class="c-action-trigger c-glyph glyph-chevron-right" aria-label="See more menu options" ms.title="Mobile forward button" style="display: none;"></button>
+            </div>
+
+                    <nav id="uhf-g-nav" ms.cmpgrp="nav" style="display: none;">
+            <ul>
+                        <li>
+                            <div class="c-select-menu c-uhf-menu js-nav-menu">
+
+                                <button id="Technologies-navigation" aria-expanded="false" aria-haspopup="true" ms.title="Technologies" ms.interactiontype="14" style="white-space:nowrap">Technologies</button>
+                                <ul class="c-menu" aria-labelledby="Technologies-navigation" aria-hidden="true" ms.cmpnm="Technologies">
+    <li class="c-menu-item f-sub-menu js-nav-menu" ms.cmpnm="Windows">
+
+        <button id="Windows-navigation" aria-expanded="false" ms.title="Windows" ms.interactiontype="14">Windows</button>
+        <ul class="c-menu" aria-labelledby="Windows-navigation" aria-hidden="true" ms.cmpnm="Windows">
+    <li class="c-menu-item" ms.cmpnm="Windows_Apps">
+        <a id="shellmenu_18833471" href="https://developer.microsoft.com/windows" ms.title="Windows_Apps">Apps</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Windows_InternetofThings">
+        <a id="shellmenu_18833472" href="https://developer.microsoft.com/windows/iot" ms.title="Windows_InternetofThings">Internet of Things</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Windows_Holographic">
+        <a id="shellmenu_18833473" href="https://developer.microsoft.com/en-us/windows/mixed-reality" ms.title="Windows_Holographic">Mixed Reality</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Windows_MicrosoftEdge">
+        <a id="shellmenu_18833474" href="https://developer.microsoft.com/microsoft-edge" ms.title="Windows_MicrosoftEdge">Microsoft Edge</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Windows_Hardware ">
+        <a id="shellmenu_18833475" href="https://developer.microsoft.com/windows/hardware" ms.title="Windows_Hardware ">Hardware </a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Windows_WindowsTechCenter">
+        <a id="shellmenu_18833476" href="https://technet.microsoft.com/windows" ms.title="Windows_WindowsTechCenter">IT Center</a>
+        
+    </li>
+            
+        </ul>
+        
+    </li>
+    <li class="c-menu-item f-sub-menu js-nav-menu" ms.cmpnm="MicrosoftAzure">
+
+        <button id="MicrosoftAzure-navigation" aria-expanded="false" ms.title="MicrosoftAzure" ms.interactiontype="14">Microsoft Azure </button>
+        <ul class="c-menu" aria-labelledby="MicrosoftAzure-navigation" aria-hidden="true" ms.cmpnm="MicrosoftAzure">
+    <li class="c-menu-item" ms.cmpnm="MicrosoftAzure_WhatisAzure">
+        <a id="shellmenu_18833478" href="https://azure.microsoft.com/overview/what-is-azure/" ms.title="MicrosoftAzure_WhatisAzure">What is Azure </a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="MicrosoftAzure_Products">
+        <a id="shellmenu_18833479" href="https://azure.microsoft.com/services/" ms.title="MicrosoftAzure_Products">Products</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="MicrosoftAzure_Solutions">
+        <a id="shellmenu_18833480" href="https://azure.microsoft.com/solutions/?v=4" ms.title="MicrosoftAzure_Solutions">Solutions</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="MicrosoftAzure_Pricing">
+        <a id="shellmenu_18833481" href="https://azure.microsoft.com/pricing/" ms.title="MicrosoftAzure_Pricing">Pricing</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="MicrosoftAzure_CreateaFreeAccount">
+        <a id="shellmenu_18833482" href="https://azure.microsoft.com/free" ms.title="MicrosoftAzure_CreateaFreeAccount">Create a free account</a>
+        
+    </li>
+            
+        </ul>
+        
+    </li>
+    <li class="c-menu-item f-sub-menu js-nav-menu" ms.cmpnm="MicrosoftVisualStudio">
+
+        <button id="VisualStudio-navigation" aria-expanded="false" ms.title="MicrosoftVisualStudio" ms.interactiontype="14">Visual Studio </button>
+        <ul class="c-menu" aria-labelledby="VisualStudio-navigation" aria-hidden="true" ms.cmpnm="MicrosoftVisualStudio">
+    <li class="c-menu-item" ms.cmpnm="MicrosoftVisualStudio_VisualStudio">
+        <a id="shellmenu_18833484" href="https://www.visualstudio.com/" ms.title="MicrosoftVisualStudio_VisualStudio">Visual Studio</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="MicrosoftVisualStudio_VisualStudioIDE">
+        <a id="shellmenu_18833485" href="https://www.visualstudio.com/vs/" ms.title="MicrosoftVisualStudio_VisualStudioIDE">Visual Studio IDE</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="MicrosoftVisualStudio_VisualStudioTeamServices">
+        <a id="shellmenu_18833486" href="https://www.visualstudio.com/team-services/" ms.title="MicrosoftVisualStudio_VisualStudioTeamServices">Visual Studio Team Services</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="MicrosoftVisualStudio_VisualStudioCode">
+        <a id="shellmenu_18833487" href="https://code.visualstudio.com/" ms.title="MicrosoftVisualStudio_VisualStudioCode">Visual Studio Code</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="MicrosoftVisualStudio_Xamarin">
+        <a id="shellmenu_18833488" href="https://www.xamarin.com/" ms.title="MicrosoftVisualStudio_Xamarin">Xamarin</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="MicrosoftVisualStudio_VisualStudioDevEssentials">
+        <a id="shellmenu_18833489" href="https://www.visualstudio.com/dev-essentials/" ms.title="MicrosoftVisualStudio_VisualStudioDevEssentials">Visual Studio Dev Essentials</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="MicrosoftVisualStudio_Subscriptions">
+        <a id="shellmenu_18833490" href="https://www.visualstudio.com/subscriptions/" ms.title="MicrosoftVisualStudio_Subscriptions">Subscriptions</a>
+        
+    </li>
+            
+        </ul>
+        
+    </li>
+    <li class="c-menu-item f-sub-menu js-nav-menu" ms.cmpnm="Office">
+
+        <button id="Office-navigation" aria-expanded="false" ms.title="Office" ms.interactiontype="14">Office</button>
+        <ul class="c-menu" aria-labelledby="Office-navigation" aria-hidden="true" ms.cmpnm="Office">
+    <li class="c-menu-item" ms.cmpnm="Office_OfficeDevCenter">
+        <a id="shellmenu_18833492" href="https://dev.office.com/" ms.title="Office_OfficeDevCenter">Office Dev Center</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Office_Office365forITpros">
+        <a id="shellmenu_18833493" href="https://technet.microsoft.com/en-us/office/dn788774" ms.title="Office_Office365forITpros">Office 365 for IT pros</a>
+        
+    </li>
+            
+        </ul>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Microsoft Graph">
+        <a id="shellmenu_18833494" href="https://graph.microsoft.io/en-us/docs" ms.title="Microsoft Graph">Microsoft Graph</a>
+        
+    </li>
+    <li class="c-menu-item f-sub-menu js-nav-menu" ms.cmpnm="Services ">
+
+        <button id="Services-navigation" aria-expanded="false" ms.title="Services " ms.interactiontype="14">Services </button>
+        <ul class="c-menu" aria-labelledby="Services-navigation" aria-hidden="true" ms.cmpnm="Services ">
+    <li class="c-menu-item" ms.cmpnm="Services_OfficeDevCenter">
+        <a id="shellmenu_18833496" href="https://developer.microsoft.com/store" ms.title="Services_OfficeDevCenter">Store</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Services_Cortana">
+        <a id="shellmenu_18833497" href="https://developer.microsoft.com/cortana" ms.title="Services_Cortana">Cortana</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Services_Bing">
+        <a id="shellmenu_18833498" href="https://bing.com/dev/dev-center" ms.title="Services_Bing">Bing</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Services_ApplicationInsights">
+        <a id="shellmenu_18833499" href="https://azure.microsoft.com/services/application-insights" ms.title="Services_ApplicationInsights">Application Insights</a>
+        
+    </li>
+            
+        </ul>
+        
+    </li>
+                                    
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="c-select-menu c-uhf-menu js-nav-menu">
+
+                                <button id="Documentation-navigation" aria-expanded="false" aria-haspopup="true" ms.title="Documentation" ms.interactiontype="14" style="white-space:nowrap">Documentation</button>
+                                <ul class="c-menu" aria-labelledby="Documentation-navigation" aria-hidden="true" ms.cmpnm="Documentation">
+    <li class="c-menu-item" ms.cmpnm="Learn_MicrosoftDeveloperNetwork">
+        <a id="shellmenu_18833501" href="https://msdn.microsoft.com/" ms.title="Learn_MicrosoftDeveloperNetwork">Microsoft Developer Network</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Learn_TechNet">
+        <a id="shellmenu_18833502" href="https://technet.microsoft.com/" ms.title="Learn_TechNet">TechNet</a>
+        
+    </li>
+    <li class="c-menu-item f-sub-menu js-nav-menu" ms.cmpnm="Build_DeveloperCenters">
+
+        <button id="Platforms-navigation" aria-expanded="false" ms.title="Build_DeveloperCenters" ms.interactiontype="14">Platforms</button>
+        <ul class="c-menu" aria-labelledby="Platforms-navigation" aria-hidden="true" ms.cmpnm="Build_DeveloperCenters">
+    <li class="c-menu-item" ms.cmpnm="Build_DeveloperCenters_MicrosoftAzure">
+        <a id="shellmenu_18833504" href="https://azure.microsoft.com/en-us/documentation/" ms.title="Build_DeveloperCenters_MicrosoftAzure">Microsoft Azure</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Build_DeveloperCenters_MicrosoftGraph">
+        <a id="shellmenu_18833505" href="https://graph.microsoft.io/en-us/docs" ms.title="Build_DeveloperCenters_MicrosoftGraph">Microsoft Graph</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Build_DeveloperCenters_VisualStudio">
+        <a id="shellmenu_18833506" href="https://www.visualstudio.com/vs/getting-started/" ms.title="Build_DeveloperCenters_VisualStudio">Visual Studio</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Build_DeveloperCenters_VisualStudioTeamServices">
+        <a id="shellmenu_18833507" href="https://www.visualstudio.com/docs/overview" ms.title="Build_DeveloperCenters_VisualStudioTeamServices">Visual Studio Team Services</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Build_DeveloperCenters_Windows">
+        <a id="shellmenu_18833508" href="https://docs.microsoft.com/en-us/windows" ms.title="Build_DeveloperCenters_Windows">Windows</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Build_DeveloperCenters_Office">
+        <a id="shellmenu_18833509" href="https://dev.office.com/docs" ms.title="Build_DeveloperCenters_Office">Office</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Build_DeveloperCenters_AllDeveloperCenters">
+        <a id="shellmenu_18833510" href="https://developer.microsoft.com/en-us/" ms.title="Build_DeveloperCenters_AllDeveloperCenters">All Developer Centers</a>
+        
+    </li>
+            
+        </ul>
+        
+    </li>
+    <li class="c-menu-item f-sub-menu js-nav-menu" ms.cmpnm="Build_TechCenters">
+
+        <button id="ITTechCenters-navigation" aria-expanded="false" ms.title="Build_TechCenters" ms.interactiontype="14">IT TechCenters</button>
+        <ul class="c-menu" aria-labelledby="ITTechCenters-navigation" aria-hidden="true" ms.cmpnm="Build_TechCenters">
+    <li class="c-menu-item" ms.cmpnm="TechCenter_WindowsTechCenter">
+        <a id="shellmenu_18833512" href="https://technet.microsoft.com/windows" ms.title="TechCenter_WindowsTechCenter">Windows IT Center</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="TechCenter_Office365forITpros">
+        <a id="shellmenu_18833513" href="https://technet.microsoft.com/en-us/office/dn788774" ms.title="TechCenter_Office365forITpros">Office 365 for IT Pros</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="TechCenter_AllTechcenters">
+        <a id="shellmenu_18833514" href="https://technet.microsoft.com/en-us/bb421517.aspx?wt.svl=more_centers_link" ms.title="TechCenter_AllTechcenters">All IT TechCenters</a>
+        
+    </li>
+            
+        </ul>
+        
+    </li>
+    <li class="c-menu-item f-sub-menu js-nav-menu" ms.cmpnm="Build_Downloads">
+
+        <button id="Downloads-navigation" aria-expanded="false" ms.title="Build_Downloads" ms.interactiontype="14">Downloads</button>
+        <ul class="c-menu" aria-labelledby="Downloads-navigation" aria-hidden="true" ms.cmpnm="Build_Downloads">
+    <li class="c-menu-item" ms.cmpnm="Build_Downloads_MicrosoftDownloadCenter">
+        <a id="shellmenu_18833516" href="https://www.microsoft.com/en-us/download/developer-tools.aspx" ms.title="Build_Downloads_MicrosoftDownloadCenter">Microsoft Download Center</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Build_Downloads_Microsoft Azure">
+        <a id="shellmenu_18833517" href="https://azure.microsoft.com/en-us/downloads/" ms.title="Build_Downloads_Microsoft Azure">Microsoft Azure</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Build_Downloads_VisualStudio">
+        <a id="shellmenu_18833518" href="https://www.visualstudio.com/downloads/" ms.title="Build_Downloads_VisualStudio">Visual Studio</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Build_Downloads_SDKS">
+        <a id="shellmenu_18833519" href="https://msdn.microsoft.com/en-us/microsoft-sdks-msdn" ms.title="Build_Downloads_SDKS">SDKs</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Build_Downloads_Windows">
+        <a id="shellmenu_18833520" href="https://developer.microsoft.com/en-us/windows/downloads" ms.title="Build_Downloads_Windows">Windows</a>
+        
+    </li>
+            
+        </ul>
+        
+    </li>
+    <li class="c-menu-item f-sub-menu js-nav-menu" ms.cmpnm="Build_Samples">
+
+        <button id="Codesamples-navigation" aria-expanded="false" ms.title="Build_Samples" ms.interactiontype="14">Code samples</button>
+        <ul class="c-menu" aria-labelledby="Codesamples-navigation" aria-hidden="true" ms.cmpnm="Build_Samples">
+    <li class="c-menu-item" ms.cmpnm="CodeSamples_Office">
+        <a id="shellmenu_18833522" href="https://dev.office.com/code-samples" ms.title="CodeSamples_Office">Office</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="CodeSamples_MicrosoftGraph">
+        <a id="shellmenu_18833523" href="https://graph.microsoft.io/en-us/code-samples-and-sdks" ms.title="CodeSamples_MicrosoftGraph">Microsoft Graph</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="CodeSamples_MSDN">
+        <a id="shellmenu_18833524" href="https://code.msdn.microsoft.com/" ms.title="CodeSamples_MSDN">MSDN</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="CodeSamples_Azure">
+        <a id="shellmenu_18833525" href="https://azure.microsoft.com/en-us/resources/samples/" ms.title="CodeSamples_Azure">Azure</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="CodeSamples_Windows">
+        <a id="shellmenu_18833526" href="https://developer.microsoft.com/en-us/windows/samples" ms.title="CodeSamples_Windows">Windows</a>
+        
+    </li>
+            
+        </ul>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="documentation_powershell_scripts">
+        <a id="shellmenu_18833527" href="https://technet.microsoft.com/scriptcenter" ms.title="documentation_powershell_scripts">PowerShell scripts</a>
+        
+    </li>
+                                    
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="c-select-menu c-uhf-menu js-nav-menu">
+
+                                <button id="Resources-navigation" aria-expanded="false" aria-haspopup="true" ms.title="Resources " ms.interactiontype="14" style="white-space:nowrap">Resources</button>
+                                <ul class="c-menu" aria-labelledby="Resources-navigation" aria-hidden="true" ms.cmpnm="Resources ">
+    <li class="c-menu-item f-sub-menu js-nav-menu" ms.cmpnm="Connect_Blogs">
+
+        <button id="Blogs-navigation" aria-expanded="false" ms.title="Connect_Blogs" ms.interactiontype="14">Blogs</button>
+        <ul class="c-menu" aria-labelledby="Blogs-navigation" aria-hidden="true" ms.cmpnm="Connect_Blogs">
+    <li class="c-menu-item" ms.cmpnm="Connect_Blogs_MicrosoftAzure">
+        <a id="shellmenu_18833530" href="https://azure.microsoft.com/en-us/blog/" ms.title="Connect_Blogs_MicrosoftAzure">Microsoft Azure</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Connect_Blogs_VisualStudio">
+        <a id="shellmenu_18833531" href="https://blogs.msdn.microsoft.com/visualstudio/" ms.title="Connect_Blogs_VisualStudio">Visual Studio</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Connect_Blogs_VisualStudioTeamServices">
+        <a id="shellmenu_18833532" href="https://blogs.msdn.microsoft.com/visualstudioalm/" ms.title="Connect_Blogs_VisualStudioTeamServices">Visual Studio Team Services </a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Connect_Blogs_DevloperTools">
+        <a id="shellmenu_18833533" href="https://blogs.msdn.microsoft.com/developer-tools/" ms.title="Connect_Blogs_DevloperTools">Developer tools</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Connect_Blogs_OfficeDevBlog">
+        <a id="shellmenu_18833534" href="https://dev.office.com/blogs" ms.title="Connect_Blogs_OfficeDevBlog">Office Dev Blog</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Connect_Blogs_ServerandManagement">
+        <a id="shellmenu_18833535" href="https://blogs.technet.microsoft.com/server-management/" ms.title="Connect_Blogs_ServerandManagement">Server &amp; management</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Connect_Blogs_Windows">
+        <a id="shellmenu_18833536" href="https://blogs.windows.com/buildingapps/" ms.title="Connect_Blogs_Windows">Windows</a>
+        
+    </li>
+            
+        </ul>
+        
+    </li>
+    <li class="c-menu-item f-sub-menu js-nav-menu" ms.cmpnm="Resources_CommunityandForums">
+
+        <button id="Community&amp;Forums-navigation" aria-expanded="false" ms.title="Resources_CommunityandForums" ms.interactiontype="14">Community &amp; Forums</button>
+        <ul class="c-menu" aria-labelledby="Community&amp;Forums-navigation" aria-hidden="true" ms.cmpnm="Resources_CommunityandForums">
+    <li class="c-menu-item" ms.cmpnm="CommunityandForums_Developers">
+        <a id="shellmenu_18833538" href="https://social.msdn.microsoft.com/Forums/en-US/home" ms.title="CommunityandForums_Developers">Developers</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="CommunityandForums_Technet">
+        <a id="shellmenu_18833539" href="https://social.technet.microsoft.com/Forums/en-US/home" ms.title="CommunityandForums_Technet">TechNet</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="CommunityandForums_MicrosoftTechCommunity">
+        <a id="shellmenu_18833540" href="https://techcommunity.microsoft.com/" ms.title="CommunityandForums_MicrosoftTechCommunity">Microsoft Tech Community</a>
+        
+    </li>
+            
+        </ul>
+        
+    </li>
+    <li class="c-menu-item f-sub-menu js-nav-menu" ms.cmpnm="Connect_CommunityandForums">
+
+        <button id="Subscriptions-navigation" aria-expanded="false" ms.title="Connect_CommunityandForums" ms.interactiontype="14">Subscriptions</button>
+        <ul class="c-menu" aria-labelledby="Subscriptions-navigation" aria-hidden="true" ms.cmpnm="Connect_CommunityandForums">
+    <li class="c-menu-item" ms.cmpnm="Subscriptions_VisualStudioMSDNSubscriptions">
+        <a id="shellmenu_18833542" href="https://my.visualstudio.com/Benefits?wt.mc_id=o~msft~UHF&amp;campaign=o~msft~UHF" ms.title="Subscriptions_VisualStudioMSDNSubscriptions">Visual Studio (MSDN) subscriptions</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Subscriptions_ITProCloudEssentials">
+        <a id="shellmenu_18833543" href="https://www.microsoft.com/cloudessentials" ms.title="Subscriptions_ITProCloudEssentials">Microsoft Cloud Essentials</a>
+        
+    </li>
+            
+        </ul>
+        
+    </li>
+    <li class="c-menu-item f-sub-menu js-nav-menu" ms.cmpnm="Resources_Training">
+
+        <button id="Training-navigation" aria-expanded="false" ms.title="Resources_Training" ms.interactiontype="14">Training</button>
+        <ul class="c-menu" aria-labelledby="Training-navigation" aria-hidden="true" ms.cmpnm="Resources_Training">
+    <li class="c-menu-item" ms.cmpnm="Training_MicrosoftVirtualAcademy">
+        <a id="shellmenu_18833545" href="https://mva.microsoft.com/" ms.title="Training_MicrosoftVirtualAcademy">Microsoft Virtual Academy </a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Training_ITProCareerCenter">
+        <a id="shellmenu_18833546" href="https://www.microsoft.com/itprocareercenter" ms.title="Training_ITProCareerCenter">IT Pro Career Center</a>
+        
+    </li>
+            
+        </ul>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Resources_TechNetEvaluationCenter">
+        <a id="shellmenu_18833547" href="https://www.microsoft.com/evalcenter/" ms.title="Resources_TechNetEvaluationCenter">TechNet Evaluation Center</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="Connect_Channel9">
+        <a id="shellmenu_18833548" href="https://channel9.msdn.com/" ms.title="Connect_Channel9">Channel 9</a>
+        
+    </li>
+                                    
+                                </ul>
+                            </div>
+                        </li>
+            </ul>
+            
+        </nav>
+
+
+                <div ms.cmpgrp="Header actions">
+                            <form class="c-search" autocomplete="off" id="searchForm" name="searchForm" role="search" action="https://social.msdn.microsoft.com/search/windows" method="GET" data-seautosuggest="" data-seautosuggestapi="https://www.microsoft.com/services/api/v3/suggest">
+            <input data-m="{&quot;cN&quot;:&quot;cli_shellHeaderSearchInput&quot;,&quot;pid&quot;:&quot;query&quot;,&quot;id&quot;:&quot;nn2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;m1r1a1&quot;}" id="cli_shellHeaderSearchInput" aria-label="Search Dev Center" aria-controls="universal-header-search-auto-suggest-transparent" aria-haspopup="true" title="Search Dev Center" type="search" name="query" placeholder="Search Dev Center" ms.title="SearchBox">
+                <input data-m="{&quot;pid&quot;:&quot;Refinement&quot;,&quot;id&quot;:&quot;nn3m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;m1r1a1&quot;}" type="hidden" name="Refinement" value="183" ms.title="HiddenInput">
+            <button data-m="{&quot;cN&quot;:&quot;search&quot;,&quot;pid&quot;:&quot;search&quot;,&quot;id&quot;:&quot;nn4m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;m1r1a1&quot;}" id="search" name="search" aria-label="Search" class="c-glyph" title="Search" ms.title="Search" data-bi-dnt="true"><span class="x-screen-reader">Search Dev Center</span></button>
+            <div class="m-auto-suggest" id="universal-header-search-auto-suggest-transparent" role="group">
+                <ul class="c-menu" aria-hidden="true" data-js-auto-suggest-postion="default" data-js-auto-suggest-position="default" role="menu" data-tel="wedcs" ms.cmpgrp="search suggestions">
+                </ul>
+                <ul class="c-menu f-auto-suggest-no-results" aria-hidden="true" data-js-auto-suggest-postion="default" data-js-auto-suggest-position="default" tabindex="0">
+                    <li class="c-menu-item"> <span tabindex="-1">No results</span></li>
+                </ul>
+            </div>
+        
+        </form>
+
+                    
+                    
+                            <div id="meControl" class="c-me" data-signinsettings="{&quot;containerId&quot;:&quot;meControl&quot;,&quot;enabled&quot;:true,&quot;headerHeight&quot;:48,&quot;debug&quot;:false,&quot;extensibleLinks&quot;:[],&quot;userData&quot;:{&quot;idp&quot;:&quot;msa&quot;,&quot;firstName&quot;:&quot;&quot;,&quot;lastName&quot;:&quot;&quot;,&quot;memberName&quot;:&quot;&quot;,&quot;cid&quot;:&quot;&quot;,&quot;authenticatedState&quot;:&quot;3&quot;},&quot;rpData&quot;:{&quot;preferredIdp&quot;:&quot;msa&quot;,&quot;msaInfo&quot;:{&quot;signInUrl&quot;:&quot;/en-us/store/signin&quot;,&quot;signOutUrl&quot;:&quot;/en-us/store/signout&quot;,&quot;meUrl&quot;:&quot;https://login.live.com/me.srf?wa=wsignin1.0&quot;},&quot;aadInfo&quot;:{&quot;signOutUrl&quot;:&quot;/en-us/store/signout&quot;,&quot;appId&quot;:null,&quot;siteUrl&quot;:null,&quot;blockMsaFed&quot;:true}}}" ms.cmpgrp="Me Control" style="display: none;"><div class="msame_Header msame_unauth msame_Short" tabindex="0" style="height: 48px;"><div class="msame_Header_name msame_TxtTrunc" style="line-height: 48px;">Sign in</div><div class="msame_Header_chev"></div></div></div>
+        <style>
+        .msame_Header{border:1px solid transparent;border-bottom-style:none;display:inline-block;font-size:14px;height:48px;min-width:100px;width:100%}
+        .msame_Header_name{color:#505050;display:inline-block;font-size:86%;line-height:48px;max-width:160px;overflow:hidden;text-overflow:ellipsis;vertical-align:top;white-space:nowrap;padding:0 12px}
+        </style>
+
+
+                    
+                </div>
+        </div>
+        
+        
+    </div>
+            <div class="theme-dark brand-neutral js-cat-head" itemprop="brand" itemscope="itemscope" itemtype="http://schema.org/Brand" ms.cmpgrp="UHF category nav"><div id="gleam" class="uhf4-gleam"></div>
+
+<div>
+        <a id="uhfCatLogo" class="c-logo" href="https://developer.microsoft.com/store" aria-label="Store" itemprop="url" ms.title="Store">
+                <span>Store</span>
+        </a>
+    
+        <a id="store_dashboard" class="c-uhf-nav-link c-hyperlink x-hidden-vp1 x-hidden-vp2" href="https://developer.microsoft.com/en-us/dashboard/apps/overview" ms.title="Dashboard">Dashboard</a>
+<button class="c-action-trigger c-glyph glyph-chevron-left" ms.title="Previous" tabindex="0" style="display: none;"></button>
+    
+    <button class="c-action-trigger c-glyph glyph-chevron-right" ms.title="Next" tabindex="0" style="display: none;"></button>
+            <nav id="uhf-c-nav" role="navigation" style="display: none;">
+
+<a id="store_Register" class="c-hyperlink c-uhf-nav-link" href="https://developer.microsoft.com/en-us/store/register" ms.title="StoreRegister">Register</a><a id="Store_Develop" class="c-hyperlink c-uhf-nav-link" href="https://developer.microsoft.com/en-us/windows" ms.title="StoreDevelop">Develop Windows apps</a><a id="store_publish" class="c-hyperlink c-uhf-nav-link" href="https://developer.microsoft.com/en-us/store/publish-apps" ms.title="StorePublish">Publish</a><a id="store_monetize" class="c-hyperlink c-uhf-nav-link" href="https://developer.microsoft.com/en-us/store/monetize" ms.title="StoreMonetize">Monetize</a><a id="store_promote" class="c-hyperlink c-uhf-nav-link" href="https://developer.microsoft.com/en-us/store/promote-your-apps" ms.title="StorePromote">Promote</a><div class="c-select-menu c-uhf-menu js-nav-menu">
+                    <button id="resources_resources" aria-expanded="false" aria-haspopup="true" ms.title="winapps_resources">Resources</button>
+                    <ul class="c-menu" aria-labelledby="resources_resources" aria-hidden="true" ms.cmpnm="winapps_resources">
+    <li class="c-menu-item" ms.cmpnm="winapps_downloads">
+        <a id="resources_downloads" href="https://developer.microsoft.com/en-us/windows/downloads" ms.title="winapps_downloads">Downloads</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="winapps_samples">
+        <a id="resources_samples" href="https://developer.microsoft.com/en-us/windows/samples" ms.title="winapps_samples">Samples</a>
+        
+    </li>
+    <li class="c-menu-item" ms.cmpnm="winapps_support">
+        <a id="resources_support" href="https://developer.microsoft.com/en-us/windows/support" ms.title="winapps_support">Support</a>
+        
+    </li>
+                        
+                    </ul>
+                </div><a id="mobile-store_dashboard" class="c-hyperlink c-uhf-nav-link x-hidden x-visible-vp1-block x-visible-vp2-block" href="https://developer.microsoft.com/en-us/dashboard/apps/overview" ms.title="StoreDashboard">Dashboard</a>                    </nav>
+
+</div>
+
+
+        
+        </div>
+
+    
+</header>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+            </div>
+
+    </section>
+
+    
+    <div id="deltaUi">
+    
+        </div></div>
+
+<script type="text/javascript" src="./require.min.js.下載"></script>
+
+
+<script type="text/javascript">var guid = ("xxxxxxxx-xxxx-4xxx-Rxxx-xxxxxxxxxxxx".replace(/x/g, function () { return Math.floor(Math.random() * 16).toString(16); })).replace("R", (8 | Math.floor(Math.random() * 3)).toString(16)); var m = document.createElement("meta"); m.content = guid; m.name = "ms.dqid"; document.getElementsByTagName("head")[0].appendChild(m);</script>
+<img style="display:none;" onerror="var m=document.createElement(&#39;meta&#39;);m.name=&#39;ms.dqp0&#39;;m.content=&#39;true&#39;;document.getElementsByTagName(&#39;head&#39;)[0].appendChild(m);" onload="var m=document.createElement(&#39;meta&#39;);m.name=&#39;ms.dqp0&#39;;m.content=&#39;false&#39;;document.getElementsByTagName(&#39;head&#39;)[0].appendChild(m);" src="./c.gif.下載">
+<script>
+    //<![CDATA[
+    (function () {
+        
+        function reportError(errorText) {
+            new Image().src = '/reporterror?clientError=' + encodeURIComponent(errorText) + '&sourceUri=' + encodeURIComponent(document.location.href);
+        }
+
+                    requirejs.onError = function (err) {
+                        console.log(err);
+
+                        // Sometimes the list of required modules is null, so reporting an error will at best give us the page URL.
+                        var requireModules = err.requireModules || [];
+                        reportError('RequireJS error: ' + err.message + ' Type: "' + err.requireType + '" for module(s): [' + requireModules.join(', ') + ']');
+                    };
+
+                    $(document).ajaxError(function (event, jqxhr, ajaxSettings, thrownError) {
+                        
+                    if (jqxhr.status == 401 && jqxhr.getResponseHeader("WWW-Authenticate") != null) {
+                        $('#signInPrompt').modal('show');
+                    } else {
+                            reportError('ajax error requesting: "' + ajaxSettings.url + '"; thrownError: "' + thrownError + '"');
+                    }
+                    });
+
+                $(document).ready(function () {
+                    $('#signInCancel').click(function () {
+                        $('#signInPrompt').modal('hide');
+                    });
+
+                    $('#miscModalOK').click(function () {
+                        $('#miscModal').modal('hide');
+                    });
+                });
+            })();
+
+            var fdRequireConfig = {
+                baseUrl: '/content/9.0.17128.1/',
+                
+                context: 'frontdoor',
+                paths: {
+                    'jquery': '//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min',
+                    'knockout': '//ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0',
+                    'clickstreamTracker': '//az725175.vo.msecnd.net/scripts/jsll-3.3.1-beta-1'
+                },
+                bundles: {
+                    /* Tell requireJS to find these modules via the bundle definition.  In debug mode (fltdebug:1), individual script files
+                    are emitted without bundling/minification. */
+'/content/bundles/js?v=HN1_IEplurZLHOQsFQlTU8fathndqB1MwbudBpcSv3I1': ['local-storage','local-storage-helper','fdjsll','util','meControl','single-signon','customTracker','leftNav','leftNavInit','feedbackDialog','npsDialog','init','util','feedback','common','notification','appL2','text','left-nav'],        },
+        waitSeconds: 0,
+        config: {
+            leftNav: {
+                    enableNav: "true",
+                    }
+        }
+    }
+
+    var fdRequire = require.config(fdRequireConfig);
+    fdRequire(['single-signon']);
+    fdRequire(['fdjsll']); 
+    // ]]>
+</script>
+<input type="hidden" id="localStoreDeltaUiKey" value="delta-ui:dbv2=false:bcast-q=showin=everywhere">
+<input type="hidden" id="serviceName" value="cms">
+<input type="hidden" id="asimovTelemetryAppId" value="JS:DevCenter">
+
+
+<meta name="ms.Cv" content="UZAngd2WnU6oDoV/.0">
+<div id="flightPicker" style="display: none"></div>
+
+<script type="text/javascript" src="./bootstrap.js.下載"></script>
+
+
+        <script src="./uhf-main.var.min.js.下載"></script><script src="./meversion(1).下載"></script>
+    </div>
+    <!-- Publish Windows apps -->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-24 spacer-20-bottom">
+            <header class="page-title-header">
+                <h1 class="page-title">Publish Windows apps</h1>
+                <div class="row">
+                    <div class="col-lg-16">
+                        <div class="page-subtitle">The unified Windows Dev Center dashboard lets you publish and manage all of your apps for Windows devices. <a href="https://developer.microsoft.com/store/register">Sign up today</a>.</div>
+                    </div>
+                </div>
+            </header>
+        </div>
+    </div>
+    <!-- Publish your apps today -->
+    <div class="row spacer-32-top">
+        <div class="col-xs-24">
+            <section class="section">
+                <header class="section-header">
+                    <h2 class="section-title">Submit your app to the Store</h2>
+                </header>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- splits into 2 rows, 2 columns when smaller than LG -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- splits into 4 rows, one column when smaller than MD -->
+                                <section class="section item-section">
+                                    <div class="section-header">
+                                        <h5 class="section-title">App submissions</h5>
+                                    </div>
+                                    <div class="section-body">
+                                        <p>One submission flow for all types of apps. Find out what you need to create a submission and get your app certified.</p>
+                                        <ul>
+                                            <li><a href="https://docs.microsoft.com/windows/uwp/publish/app-submissions">App submission checklist</a></li>
+                                            <li><a href="https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process">The certification process</a></li>
+                                            <li><a href="https://docs.microsoft.com/windows/uwp/publish/add-on-submissions">Submitting add-ons</a></li>
+                                        </ul>
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="col-md-12">
+                                <section class="section item-section">
+                                    <div class="section-header">
+                                        <h5 class="section-title">Pricing and availability</h5>
+                                    </div>
+                                    <div class="section-body">
+                                        <p>Customize your app’s availability with per-market pricing, distribution and visibility controls, and other options.</p>
+                                        <ul>
+                                            <li><a href="https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability">Pricing and availability choices</a></li>
+                                            <li><a href="https://docs.microsoft.com/windows/uwp/publish/beta-testing-and-targeted-distribution">Beta testing and targeted distribution</a></li>
+                                        </ul>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <section class="section item-section">
+                                    <div class="section-header">
+                                        <h5 class="section-title">Package management</h5>
+                                    </div>
+                                    <div class="section-body">
+                                        <p>Get familiar with requirements and learn how the Store distributes packages to your app’s customers.</p>
+                                        <ul>
+                                            <li><a href="https://docs.microsoft.com/windows/uwp/publish/upload-app-packages">Uploading packages</a></li>
+                                            <li><a href="https://docs.microsoft.com/windows/uwp/publish/guidance-for-app-package-management">Package management guidance</a></li>
+                                            <li><a href="https://docs.microsoft.com/windows/uwp/publish/guidance-for-app-package-management">Version numbering rules</a></li>
+                                        </ul>
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="col-md-12">
+                                <section class="section item-section">
+                                    <div class="section-header">
+                                        <h5 class="section-title">Payments and reporting</h5>
+                                    </div>
+                                    <div class="section-body">
+                                        <p>Once your app is published, detailed analytics let you see how it’s doing and track how much money you’ve earned.</p>
+                                        <ul>
+                                            <li><a href="https://docs.microsoft.com/windows/uwp/publish/analytics">Analytic reports</a></li>
+                                            <li><a href="https://docs.microsoft.com/windows/uwp/publish/getting-paid-apps">Getting paid</a></li>
+                                        </ul>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<!-- Windows Store Policies -->
+<div class="jumbotron-hero media-full-height spacer-84-bottom">
+    <div class="hero-container">
+        <div class="media-content-col last">
+            <img class="hero-media-content" alt="Screen shot of Windows Store in a tablet" src="./StoreHighlightBandHero_InvariantCulture_Default.png.下載">
+        </div>
+        <div class="text-content-col first">
+            <h2 class="text-title">Windows Store Policies</h2>
+            <p class="spacer-20-top">Learn about the requirements for certification that apply to all Windows apps and content.</p>
+            <ul class="spacer-20-top">
+                <li><a href="https://msdn.microsoft.com/library/windows/apps/dn764944.aspx">Store Policies</a></li>
+                <li><a href="https://msdn.microsoft.com/library/windows/apps/hh694058.aspx">App Developer Agreement</a></li>
+                <li><a href="https://docs.microsoft.com/windows/uwp/publish/avoid-common-certification-failures">Tips to help pass certification</a></li>
+            </ul>
+        </div>
+        <div class="background win-color-bg-10"></div>
+    </div>
+</div>
+<!-- Make money with your apps -->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-24 col-md-24 col-lg-12">
+            <section class="section">
+                <header class="section-header">
+                    <h2 class="section-title">Make money with your apps</h2>
+                </header>
+                <div class="row">
+                    <div class="col-xs-24">
+                        <div class="section-body">
+                            <section class="section item-section">
+                                <div class="section-body">
+                                    <p>The Universal Windows Platform and the Windows Store provide lots of ways for your apps to earn money, including ads, add-ons, and more.</p>
+                                    <ul>
+                                        <li><a href="https://developer.microsoft.com/store/monetize">See monetization options</a></li>
+                                    </ul>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-xs-24 col-md-24 col-lg-12">
+            <section class="section">
+                <header class="section-header">
+                    <h2 class="section-title">Promote and engage</h2>
+                </header>
+                <div class="row">
+                    <div class="col-xs-24">
+                        <div class="section-body">
+                            <section class="section item-section">
+                                <div class="section-body">
+                                    <p>Engage with more customers and get the word out about your app with ad campaigns, sale pricing, badges, and more.</p>
+                                    <ul>
+                                        <li><a href="https://developer.microsoft.com/store/promote-your-apps">Explore promotion strategies</a></li>
+                                    </ul>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<noscript>&lt;img alt="" width="1" height="1" src="http://c.microsoft.com/trans_pixel.aspx" /&gt;</noscript>
+
+    <div class="sockWrapper">
+      <div class="sock">
+        <div class="text-body sock-social-links">
+          <span class="text-body sock-social-followtext">Follow us</span>
+          <!-- Windows Social Icons -->
+          <a class="sock-social-icon windows-icons" target="_blank" href="http://go.microsoft.com/fwlink/p/?LinkID=317808" style="display: inline;">
+            <img id="sock-twitter-icon" src="./twitter.png.下載" alt="Twitter">
+          </a>
+          <a class="sock-social-icon windows-icons" target="_blank" href="http://go.microsoft.com/fwlink/p/?linkid=393788" style="display: inline;">
+            <img id="sock-blog-icon" src="./blog.png.下載" alt="Blog">
+          </a>
+          <a class="sock-social-icon windows-icons" target="_blank" href="http://go.microsoft.com/fwlink/p/?LinkID=317807" style="display: inline;">
+            <img id="sock-facebook-icon" src="./facebook.png.下載" alt="Facebook">
+          </a>
+          <!-- Hardware Social Icons -->
+          <a class="sock-social-icon hardware-icons" target="_blank" href="http://go.microsoft.com/fwlink/p/?LinkId=799504" style="display: none;">
+            <img id="sock-twitter-icon" src="./twitter.png.下載" alt="Twitter">
+          </a>
+          <a class="sock-social-icon hardware-icons" target="_blank" href="http://go.microsoft.com/fwlink/p/?LinkID=690709" style="display: none;">
+            <img id="sock-blog-icon" src="./blog.png.下載" alt="Blog">
+          </a>
+          <a class="sock-social-icon hardware-icons" target="_blank" href="http://go.microsoft.com/fwlink/p/?LinkId=799507" style="display: none;">
+            <img id="sock-facebook-icon" src="./facebook.png.下載" alt="Facebook">
+          </a>
+          <a class="sock-social-icon hardware-icons" target="_blank" href="http://go.microsoft.com/fwlink/p/?LinkID=532711" style="display: none;">
+            <img id="sock-facebook-icon" src="./WeChat-icon_InvariantCulture_Default.png.下載" alt="WeChat">
+          </a>
+          <a class="sock-social-icon hardware-icons" target="_blank" href="http://go.microsoft.com/fwlink/p/?LinkId=761524" style="display: none;">
+            <img id="sock-facebook-icon" src="./LINE-icon_InvariantCulture_Default.png.下載" alt="line">
+          </a>
+        </div>
+        <div class="sock-feedback-question">
+          <span class="text-body sock-feedback-text">Was this page helpful?</span>
+          <button class="btn sock-feedback-yes text-body">Yes</button>
+          <button class="btn sock-feedback-no text-body">No</button>
+        </div>
+        <div class="sock-feedback-form">
+          <span class="text-body sock-feedback-text">Additional feedback?</span>
+          <textarea class="sock-feedback-response" columns="48"></textarea>
+          <button class="btn sock-feedback-submit text-body">Submit</button>
+          <button class="btn sock-feedback-skip text-body">Skip this</button>
+        </div>
+        <div class="sock-feedback-thanks">
+          <span class="text-body sock-feedback-text responsiveLine1">Thank you! </span>
+          <span class="text-body sock-feedback-text responsiveLine2">We appreciate your feedback.</span>
+        </div>
+        <div class="text-body sock-social-responsive">
+          <span class="text-body sock-social-followtext">Follow us</span>
+          <!-- Windows Social Icons for responsive -->
+          <a class="sock-social-icon windows-icons" href="http://go.microsoft.com/fwlink/p/?LinkID=317808" style="display: inline;">
+            <img id="sock-twitter-icon" src="./twitter.png.下載" alt="Twitter">
+          </a>
+          <a class="sock-social-icon windows-icons" href="http://go.microsoft.com/fwlink/p/?linkid=393788" style="display: inline;">
+            <img id="sock-blog-icon" src="./blog.png.下載" alt="Blog">
+          </a>
+          <a class="sock-social-icon windows-icons" href="http://go.microsoft.com/fwlink/p/?LinkID=317807" style="display: inline;">
+            <img id="sock-facebook-icon" src="./facebook.png.下載" alt="Facebook">
+          </a>
+          <!-- Hardware Social Icons for responsive -->
+          <a class="sock-social-icon hardware-icons" target="_blank" href="http://go.microsoft.com/fwlink/p/?LinkId=799504" style="display: none;">
+            <img id="sock-twitter-icon" src="./twitter.png.下載" alt="Twitter">
+          </a>
+          <a class="sock-social-icon hardware-icons" target="_blank" href="http://go.microsoft.com/fwlink/p/?LinkID=690709" style="display: none;">
+            <img id="sock-blog-icon" src="./blog.png.下載" alt="Blog">
+          </a>
+          <a class="sock-social-icon hardware-icons" target="_blank" href="http://go.microsoft.com/fwlink/p/?LinkId=799507" style="display: none;">
+            <img id="sock-facebook-icon" src="./facebook.png.下載" alt="Facebook">
+          </a>
+          <a class="sock-social-icon hardware-icons" target="_blank" href="http://go.microsoft.com/fwlink/p/?LinkID=532711" style="display: none;">
+            <img id="sock-facebook-icon" src="./WeChat-icon_InvariantCulture_Default.png.下載" alt="WeChat">
+          </a>
+          <a class="sock-social-icon hardware-icons" target="_blank" href="http://go.microsoft.com/fwlink/p/?LinkId=761524" style="display: none;">
+            <img id="sock-facebook-icon" src="./LINE-icon_InvariantCulture_Default.png.下載" alt="line">
+          </a>
+        </div>
+        <br class="breakfloat">
+      </div>
+    </div>
+    <!-- OneSite survey script (en-us only) -->
+    <script src="./broker.js.下載"></script>
+    <!-- feedback sock: feedback ui at the bottom of every dev center pages -->
+    <script type="text/javascript" src="./feedbacksock-min_InvariantCulture_Default.js.下載"></script>
+    <!-- DevCenter.js: For all-up dev center pages 
+    <script type="text/javascript" src="https://assets.windowsphone.com/a7723408-57d2-4c1d-ad46-d85aef09fe79/devcenter-min_InvariantCulture_Default.js" ></script>
+-->
+    <!-- FD tag -->
+    <div class="clearBoth">
+      <div>
+    <script type="text/javascript">
+          function openNpsDialog(askLater) {
+              (askLater === undefined) ? ifEligibleOpenDialog(false) : ifEligibleOpenDialog(askLater);
+          }
+      </script>
+
+    
+    <div class="modal" id="npsFeedback" data-bind="with: npsfeedbackvm">
+        <div class="overlay">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title" data-bind="text: surveyData().SurveyTitle"></h2>
+                    </div>
+                    <div class="modal-body">
+                        <p data-bind="text: surveyData().SurveySubTitle"></p>
+                        <!-- ko foreach: surveyData().Questions --><!-- /ko -->
+                    </div>
+                    <div class="modal-footer" data-bi-area="NPSDialog">
+                        <div class="btn-group">
+                            <button type="submit" id="npsFeedbackSubmit" class="btn btn-primary" data-bi-slot="1" data-bi-id="Submit" data-bi-name="NPSButton" data-bind="disable: !canSubmitSurvey()" disabled="">Submit feedback</button>
+                            <button type="cancel" id="npsFeedbackNotNow" class="btn" data-bi-slot="2" data-bi-id="NotNow" data-bi-name="NPSButton">Remind me later</button>
+                        </div>
+                        <a href="javascript:void(0)" id="npsFeedbackNeverShow" class="pull-right" data-bi-slot="3" data-bi-id="DoNotShow" data-bi-name="NPSButton">Dismiss</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+<div class="modal" id="feedbackDialog" style="display: none;" data-bind="with: feedbackVM">
+    <div class="overlay">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- ko if: !feedbackVM.apiSuccessful() -->
+                <div class="modal-header">
+                    <h2 class="modal-title">Send feedback</h2>
+                </div>
+                <div class="modal-body">
+                    <div>What type of feedback is this?</div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="feedbackRadios" value="1" data-bind="checked: category">
+                                <span class="text-body">Problem</span>
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="feedbackRadios" value="0" data-bind="checked: category">
+                                <span class="text-body">Suggestion</span>
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="feedbackRadios" value="4" data-bind="checked: category">
+                                <span class="text-body">Kudos</span>
+                            </label>
+                        </div>
+
+                    <div data-bind="toggleSlideVisible: category() == 1" style="display: none;">If you are experiencing issues please <a href="https://support.microsoft.com/en-us/getsupport?tenant=store&amp;oaspworkflow=start_1.0.0.0&amp;locale=en-us&amp;supportregion=en-us&amp;pesid=16070&amp;supporttopic_L1=32530383&amp;supporttopic_L2=32530384&amp;ccsid=636112993087301826" target="_blank">file a support ticket</a>.</div>
+
+                    <div class="form-group">
+                        <label>What area does this apply to?</label>
+                        <select data-bind="value: area" class="form-control" id="feedbackAreaSelectBox">
+                            
+                            <option value="">Please select an area</option>
+                                    <option value="Feedback_Area_Registration" key="Account/Registration">Account/Registration</option>
+                                    <option value="Feedback_Area_Analytics" key="Analytics">Analytics</option>
+                                    <option value="Feedback_Area_CantFindAppInStore" key="Can&#39;t find app in the Store">Can't find app in the Store</option>
+                                    <option value="Feedback_Area_Hardware" key="Hardware dashboard preview">Hardware dashboard preview</option>
+                                    <option value="Feedback_Area_Other" key="Other">Other</option>
+                                    <option value="Feedback_Area_Payouts" key="Payouts">Payouts</option>
+                                    <option value="Feedback_Area_PromotionAndMonetization" key="Promotion and monetization">Promotion and monetization</option>
+                                    <option value="Feedback_Area_RatingsAndReviews" key="Ratings and reviews">Ratings and reviews</option>
+                                    <option value="Feedback_Area_Submissions" key="Submissions">Submissions</option>
+                                    <option value="Feedback_Area_TargetedNotifications" key="Targeted notifications">Targeted notifications</option>
+                                    <option value="Feedback_Area_UpgradeTesting" key="Upgrade testing">Upgrade testing</option>
+                                    <option value="Feedback_Area_UX" key="User experience">User experience</option>
+
+                        </select>
+                    </div>
+
+                    <div id="feedbackSubArea" class="form-group" data-bind="toggleSlideVisible: showSubArea" style="display: none;">
+                        <label>What sub-area does this apply to?</label>
+                        <select data-bind="value: subArea" class="form-control">
+                            <option value="">Please select a sub-area</option>
+
+                            <!-- ko if: feedbackVM.area() == 'Feedback_Area_Submissions' --><!-- /ko -->
+
+                            <!-- ko if: feedbackVM.area() == 'Feedback_Area_PromotionAndMonetization' --><!-- /ko -->
+
+                            <!-- ko if: feedbackVM.area() == 'Feedback_Area_Payouts' --><!-- /ko -->
+
+                            <!-- ko if: feedbackVM.area() == 'Feedback_Area_Registration' --><!-- /ko -->
+
+                            <!-- ko if: feedbackVM.area() == 'Feedback_Area_Analytics' --><!-- /ko -->
+
+                            <!-- ko if: feedbackVM.area() == 'Feedback_Area_Hardware' --><!-- /ko -->
+
+                            <!-- ko if: feedbackVM.area() == 'Feedback_Area_UX' --><!-- /ko -->
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea placeholder="Add your feedback here" id="feedbackDetails" class="form-control" rows="6" data-bind="textInput: description" maxlength="2500"></textarea>
+                    </div>
+                    <div id="feedbackDialogError" class="alert alert-error" style="display: none;">There was an error sending your feedback.</div>
+                </div>
+                <div class="modal-footer">
+                    <div class="btn-group">
+                        <button id="submitFeedback" class="btn btn-primary" data-bind="click: savedeveloperfeedback, disable: disableSubmit" disabled="">Submit feedback</button>
+                        <button id="cancelFeedback" class="btn" data-bind="click: closeFeedbackDialog">Cancel</button>
+                    </div>
+                </div>
+                <br>
+                <!-- /ko -->
+                <!-- ko if: feedbackVM.apiSuccessful --><!-- /ko -->
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+        <div id="footerWrapper">
+            
+            <section id="footerArea" data-m="{&quot;cN&quot;:&quot;footerArea&quot;,&quot;cT&quot;:&quot;Area_coreuiArea&quot;,&quot;id&quot;:&quot;a2Body&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;Body&quot;}">
+                    <div id="footerRegion" data-region-key="footerregion" data-m="{&quot;cN&quot;:&quot;footerRegion&quot;,&quot;cT&quot;:&quot;Region_coreui-region&quot;,&quot;id&quot;:&quot;r1a2&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;a2&quot;}">
+
+    <div id="footerUniversalFooter" data-m="{&quot;cN&quot;:&quot;footerUniversalFooter&quot;,&quot;cT&quot;:&quot;Module_coreui-universalfooter&quot;,&quot;id&quot;:&quot;m1r1a2&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;r1a2&quot;}" data-module-id="Category|footerRegion|footerRegion|footerUniversalFooter|coreui-universalfooter">
+        
+
+
+
+
+<footer id="uhf-footer" class="c-universal-footer context-uhf" data-uhf-greenid="false" data-footer-footprint="en-us/DEV_Store/devcenter-store-footer" ms.pgarea="Uhf footer">
+        <nav ms.cmpgrp="Footer nav">
+            
+                <div>
+                        <div ms.cmpnm="Popular
+
+">
+                            <h6 class="c-heading-4">Popular
+
+</h6>
+                            <ul class="c-list f-bare">
+                                        <li>
+                                            <a class="c-hyperlink" href="https://developer.microsoft.com/en-us/windows" ms.title="Popular_WindowsDevCenter">Windows Dev Center</a>
+                                        </li>
+                                        <li>
+                                            <a class="c-hyperlink" href="https://azure.microsoft.com/" ms.title="Popular_MicrosoftAzure">Microsoft Azure</a>
+                                        </li>
+                                        <li>
+                                            <a class="c-hyperlink" href="https://www.visualstudio.com/" ms.title="Popular_MicrosoftVisualStudio">Microsoft Visual Studio </a>
+                                        </li>
+                                        <li>
+                                            <a class="c-hyperlink" href="https://dev.office.com/" ms.title="Popular_OfficeDevCenter">Office Dev Center</a>
+                                        </li>
+                                        <li>
+                                            <a class="c-hyperlink" href="https://www.asp.net/" ms.title="Popular_asp.net ">ASP.NET</a>
+                                        </li>
+                                        <li>
+                                            <a class="c-hyperlink" href="https://www.iis.net/" ms.title="Popular_IIS.net">IIS.NET</a>
+                                        </li>
+
+                            </ul>
+                            
+                        </div>
+                        <div ms.cmpnm="Learning Resources">
+                            <h6 class="c-heading-4">Learning Resources</h6>
+                            <ul class="c-list f-bare">
+                                        <li>
+                                            <a class="c-hyperlink" href="https://channel9.msdn.com/" ms.title="LearningResources_Channel9">Channel 9</a>
+                                        </li>
+                                        <li>
+                                            <a class="c-hyperlink" href="https://developer.microsoft.com/en-us/windows/develop/app-development-video" ms.title="LearningResources_WindowsDevelopmentVideos">Windows development videos</a>
+                                        </li>
+                                        <li>
+                                            <a class="c-hyperlink" href="https://mva.microsoft.com/" ms.title="LearningResources_MicrosoftVirtualAcademy">Microsoft Virtual Academy </a>
+                                        </li>
+
+                            </ul>
+                            
+                        </div>
+                        <div ms.cmpnm="Programs">
+                            <h6 class="c-heading-4">Programs</h6>
+                            <ul class="c-list f-bare">
+                                        <li>
+                                            <a class="c-hyperlink" href="https://developer.microsoft.com/en-us/store/register" ms.title="Programs_AppDeveloperAgreement">Microsoft developer program</a>
+                                        </li>
+                                        <li>
+                                            <a class="c-hyperlink" href="https://insider.windows.com/" ms.title="Programs_WindowsInsiderProgram">Windows Insider program</a>
+                                        </li>
+                                        <li>
+                                            <a class="c-hyperlink" href="http://www.microsoftaffiliates.com/" ms.title="Programs_MicrosoftAffliateProgram">Microsoft Affiliate program </a>
+                                        </li>
+                                        <li>
+                                            <a class="c-hyperlink" href="https://www.microsoft.com/bizspark" ms.title="Programs_BizSparkforStartups">BizSpark (for startups) </a>
+                                        </li>
+                                        <li>
+                                            <a class="c-hyperlink" href="https://msdn.microsoft.com/en-us/imagine/imagine-home" ms.title="Programs_MicrosoftImagineforStudents">Microsoft Imagine</a>
+                                        </li>
+
+                            </ul>
+                            
+                        </div>
+                </div>
+                <div>
+                        <div ms.cmpnm="For IT Pros">
+                            <h6 class="c-heading-4">For IT Pros</h6>
+                            <ul class="c-list f-bare">
+                                        <li>
+                                            <a class="c-hyperlink" href="https://powerbi.microsoft.com/en-us" ms.title="ForITPros_MicrosoftPowerBI">Microsoft Power BI</a>
+                                        </li>
+                                        <li>
+                                            <a class="c-hyperlink" href="https://www.microsoft.com/en-us/server-cloud/products/sql-server/overview.aspx" ms.title="ForITPros_MicrosoftSQLServer">Microsoft SQL Server </a>
+                                        </li>
+                                        <li>
+                                            <a class="c-hyperlink" href="https://www.microsoft.com/en-us/server-cloud/internet-of-things/overview.aspx" ms.title="ForITPros_InternetofThings">Internet of Things </a>
+                                        </li>
+                                        <li>
+                                            <a class="c-hyperlink" href="https://www.microsoft.com/en-us/server-cloud/operations-management-suite/overview.aspx" ms.title="ForITPros_OperationsManagementSuite">Operations Management Suite </a>
+                                        </li>
+
+                            </ul>
+                            
+                        </div>
+                        <div ms.cmpnm="Values">
+                            <h6 class="c-heading-4">Values</h6>
+                            <ul class="c-list f-bare">
+                                        <li>
+                                            <a class="c-hyperlink" href="https://www.microsoft.com/en-us/diversity/" ms.title="Values_DiversityandInclusion">Diversity and inclusion</a>
+                                        </li>
+                                        <li>
+                                            <a class="c-hyperlink" href="https://www.microsoft.com/en-us/accessibility/home" ms.title="Values_Accessility">Accessibility</a>
+                                        </li>
+                                        <li>
+                                            <a class="c-hyperlink" href="https://www.microsoft.com/en-us/education" ms.title="Values_MicrosoftinEducation">Microsoft in education</a>
+                                        </li>
+                                        <li>
+                                            <a class="c-hyperlink" href="https://www.microsoft.com/about/philanthropies" ms.title="Values_CorporateCitizenship">Microsoft philanthropies</a>
+                                        </li>
+                                        <li>
+                                            <a class="c-hyperlink" href="https://www.microsoft.com/about/csr" ms.title="Values_CorporateSocialResponsibility">Corporate social responsibility</a>
+                                        </li>
+                                        <li>
+                                            <a class="c-hyperlink" href="https://privacy.microsoft.com/en-us" ms.title="Values_PrivacyatMicrosoft">Privacy at Microsoft</a>
+                                        </li>
+
+                            </ul>
+                            
+                        </div>
+                        <div ms.cmpnm="Company">
+                            <h6 class="c-heading-4">Company</h6>
+                            <ul class="c-list f-bare">
+                                        <li>
+                                            <a class="c-hyperlink" href="https://careers.microsoft.com/" ms.title="Company_Careers">Careers</a>
+                                        </li>
+                                        <li>
+                                            <a class="c-hyperlink" href="https://www.microsoft.com/en-us/about" ms.title="Company_AboutMicrosoft">About Microsoft</a>
+                                        </li>
+                                        <li>
+                                            <a class="c-hyperlink" href="https://news.microsoft.com/" ms.title="Company_CompanyNews">Company news</a>
+                                        </li>
+                                        <li>
+                                            <a class="c-hyperlink" href="https://www.microsoft.com/investor/default.aspx" ms.title="Company_Investors">Investors</a>
+                                        </li>
+                                        <li>
+                                            <a class="c-hyperlink" href="https://microsoft.com/research" ms.title="Company_Research">Research</a>
+                                        </li>
+                                        <li>
+                                            <a class="c-hyperlink" href="https://www.microsoft.com/en-us/sitemap.aspx" ms.title="Company_SiteMap">Site map</a>
+                                        </li>
+
+                            </ul>
+                            
+                        </div>
+                </div>
+        </nav>
+    <section>
+                <a id="locale-picker-link" class="c-hyperlink c-glyph glyph-world" href="https://developer.microsoft.com/locale" ms.title="locale_picker(US)">English (United States)</a>
+
+        <ul role="contentinfo" class="c-list f-bare" ms.cmpgrp="Corp links">
+                            <li>
+                    <a class="c-hyperlink" href="https://go.microsoft.com/?linkid=2028325" ms.title="Footer_ContactUs">Contact us</a>
+                </li>
+                <li>
+                    <a class="c-hyperlink" href="https://go.microsoft.com/fwlink/?LinkId=521839" ms.title="Footer_PrivacyandCookies">Privacy &amp; cookies </a>
+                </li>
+                <li>
+                    <a class="c-hyperlink" href="https://go.microsoft.com/fwlink/?LinkID=206977" ms.title="Footer_TermsOfUse">Terms of use</a>
+                </li>
+                <li>
+                    <a class="c-hyperlink" href="https://www.microsoft.com/trademarks" ms.title="Footer_Trademarks">Trademarks</a>
+                </li>
+                <li>
+                    <a class="c-hyperlink" href="https://choice.microsoft.com/" ms.title="Footer_AboutourAds">About our ads</a>
+                </li>
+
+            <li>© Microsoft 2017</li>
+            
+        </ul>
+    </section>
+    
+</footer>
+
+
+
+
+
+<style>
+    .c-modal-link{cursor: pointer;}
+</style>
+    </div>
+            </div>
+
+    </section>
+
+    
+        </div>
+    <script type="text/javascript" src="./common-nav.min.js.下載"></script>
+    
+
+    <script>
+        fdRequire(['feedbackDialog']);
+        fdRequire(['npsDialog']);
+        fdRequire(['init']);
+    </script>
+
+    <!-- MSCOM collection script -->
+    <script type="text/javascript">
+        var varAutoFirePV = 1;
+        var varClickTracking = 1;
+        var varCustomerTracking = 0;
+        var varCustomerCookies = ['MUID'];
+        var route = 43151;
+    </script>
+    <script type="text/javascript" src="./ms.js.下載"></script>
+    <!-- End of MSCOM script -->
+    <div id="expiredAgreements"></div>
+    <div id="signInPrompt" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title text-subtitle">Sign in required</h4>
+                </div>
+                <div class="modal-body">
+                    <br><p>Your session has expired.  Please sign-in again to continue.  Unfortunately any unsaved changes will be lost.</p>
+                </div>
+                <div class="modal-footer">
+                    <div class="btn-group">
+                        <a href="https://developer.microsoft.com/aad?action=signin&amp;returnPath=/en-us/store/publish-apps" class="btn btn-primary">Sign in</a>
+                        <button type="cancel" class="btn" id="signInCancel">Cancel</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="miscModal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div id="miscModalContent"></div>
+                </div>
+                <div class="modal-footer">
+                    <div class="btn-group">
+                        <button type="cancel" class="btn" id="miscModalOK">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+    <noscript>
+      &lt;img width="1" height="1" src="http://c.microsoft.com/trans_pixel.aspx" /&gt;
+    </noscript>
+  
+
+<!-- Correlation: 22fc0a1d-4362-4df6-babc-405af475ec2f,JCkTAfImWEyWNy0s.1 -->
+<!-- CY1SCH030011333 -->
+<script src="./broker-config.js(1).下載"></script><img src="./c.gif(1).下載" style="display: none;"><div id="meControlDropdown" class="msame_Drop_root" style="display: none;"><div class="msame_Drop_topb"></div><div class="msame_Drop_content"><div class="msame_Drop_active"></div><div class="msame_Drop_rewards" style="display: none;"></div><div class="msame_Drop_account"></div><div class="msame_Drop_links" style="display: none;"><div class="msame_Drop_links_list"></div></div><div class="msame_Drop_signIn"></div><div class="msame_Drop_signOut"></div><div class="msame_Drop_accts" style="display: none;"><div class="msame_Drop_sep"></div><div class="msame_Drop_accts_list"></div></div></div></div></body></html>
